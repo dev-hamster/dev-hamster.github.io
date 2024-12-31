@@ -1,0 +1,1 @@
+export { getThumbnailImage } from './getThumbnailImage';

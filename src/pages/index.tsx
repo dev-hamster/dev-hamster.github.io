@@ -1,34 +1,39 @@
-import type { HeadFC } from 'gatsby';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, type HeadFC } from 'gatsby';
 import * as React from 'react';
+import removeMarkdown from 'remove-markdown';
 
-import { Header } from 'components/common/Header';
+import { Card } from 'components/Card';
+import { Header } from 'components/Header';
+import { Layout } from 'components/Layout';
+import { MdxNode } from 'types/post';
 
 type IndexPageProps = {
   data: {
     allMdx: {
-      nodes: {
-        id: string;
-        frontmatter: {
-          title: string;
-          slug: string;
-        };
-      }[];
+      nodes: MdxNode[];
     };
   };
 };
 
-const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
+const IndexPage = ({ data }: IndexPageProps) => {
   const posts = data.allMdx.nodes;
 
   return (
     <main>
       <Header />
-      {posts.map((post) => (
-        <li key={post.id}>
-          <Link to={post.frontmatter.slug}>{post.frontmatter.title}</Link>
-        </li>
-      ))}
+      <Layout>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8'>
+          {posts.map((post) => (
+            <Link key={post.id} to={post.frontmatter.slug}>
+              <Card
+                thumbnail={post.frontmatter.thumbnail}
+                title={post.frontmatter.title}
+                body={removeMarkdown(post.body)}
+              />
+            </Link>
+          ))}
+        </div>
+      </Layout>
     </main>
   );
 };
@@ -36,15 +41,22 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
 export default IndexPage;
 
 export const Head: HeadFC = () => <title>Home Page</title>;
-export const query = graphql`
+
+export const i = graphql`
   query {
-    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         id
         frontmatter {
           title
           slug
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+            }
+          }
         }
+        body
       }
     }
   }
