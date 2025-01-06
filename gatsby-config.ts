@@ -16,6 +16,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         gatsbyRemarkPlugins: [
+          'gatsby-remark-gifs',
           {
             resolve: `gatsby-remark-images`, // 이미지 인라인 처리
             options: {
