@@ -1,0 +1,344 @@
+---
+title: '[type-challenges] easy 도전'
+slug: /type-challenges/easy
+date: 2024-10-11
+---
+
+## PICK-4
+
+### 문제
+
+pick을 사용하지 않고 Pick을 구현하는 문제이다.
+
+- `keyof` 는 객체의 키 값들을 숫자나 문자열 리터럴 유니언을 생성한다.
+- `in` 는 객체에 특정 속성이 존재하는지 확인할 수 있다.
+
+### 코드
+
+```
+type MyPick<T, K extends keyof T> = {
+  [k in K]: T[k]
+}
+```
+
+### 풀이
+
+`K extends keyof T` K는 T의 프로퍼티 이름을 가진다. 매핑된 타입을 이용하면 키를 통해 타입을 반복적으로 생성할 수 있고 인덱스 시그니처 문법으로 작성하면 된다.
+
+## Readonly
+
+### 문제
+
+Readonly 타입을 사용하지 않고 구현하는 문제이다.
+
+- `readonly` 는 프로퍼티를 읽기 전용으로 지정할 수 있다.
+
+### 코드
+
+```
+type MyReadonly<T> = {
+  readonly [P in keyof T]: T[P]
+}
+```
+
+## **Tuple to Object**
+
+### 문제
+
+각 원소의 값을 key/value로 갖는 오브젝트 타입을 반환하는 타입을 구현하는 문제이다.
+
+```
+// 배열의 원소의 값을 key/value로 갖는 타입을 반환한다.
+['tesla', 'model 3', 'model X', 'model Y']
+
+{ 'tesla': 'tesla', 'model 3': 'model 3', 'model X': 'model X', 'model Y': 'model Y'}
+```
+
+### 코드
+
+```
+type TupleToObject<T extends readonly PropertyKey[]> = {
+  [P in T[number]] : P
+}
+```
+
+### 풀이
+
+- 배열 순회하기: `T[number]`을 통해 배열을 순회하여 타입을 가져올 수 있다. `T[number]` 은 인덱스가 숫자형인 요소들의 타입을 가져오므로 배열에 있는 모든 요소의 타입을 가져올 수 있다.
+- PropertyKey: `keyof` 를 통해 생성되는 key의 집합이다. 여기에는 string, number, symbol이 있다.
+
+## **First of Array**
+
+### 문제
+
+`T`를 받아 첫번째 원소의 타입을 반환하는 제네릭 `First<T>`를 구현하는 문제이다.
+
+### 코드
+
+```
+// 오답: 빈 배열인 경우 T[0]은 undefeind가 된다
+type First<T extends any[]> = T[0] extends never ? never : T[0]; // 원소가 없다면 never 타입 반환
+
+// 정답1
+type First<T extends unknown[]> = T[number] extends never ? never : T[0];
+// 정답2
+type First<T extends unknown[]> = T extends [] ? never : T[0];
+```
+
+### 풀이
+
+- 조건부 타입: 배열이 빈 배열이라면 `never` 타입을 반환한다.
+
+## **Length of Tuple**
+
+### 문제
+
+튜블(배열)의 길이를 반환하는 제네릭 타입을 구현하는 문제이다.
+
+### 코드
+
+```
+// 오답: Length<5>인 경우 타입 에러가 나지 않는다.
+type Length<T> = T extends readonly unknown[] ? T['length'] : never;
+```
+
+`<T extends readonly unknown[]>` 는 T가 `readonly unknown[ ]`이라는 타입을 반드시 만족해야 하므로 배열이 아닌 경우 타입 에러를 발생한다.
+
+```
+// 정답
+type Length<T extends readonly unknown[]> = T["length"];
+```
+
+### 풀이
+
+- `readonly`: 튜플은 고정된 요소를 저장하므로 readonly이다.
+
+`T extends readonly unknown[]` 에서 T가 배열 타입인지 조건부로 타입을 할당한다. 이런 경우 배열이 아닌 경우 `never`를 반환하기 때문에 타입 에러가 나지 않는다.
+
+## **Exclude**
+
+### 문제
+
+T에서 U에 할당할 수 있는 타입을 제외하는 내장 제네릭 Exclude를 사용하지 않고 구현하는 문제이다.
+
+### 코드
+
+```
+type MyExclude<T, U> = T extends U ? never : T;
+```
+
+### 풀이
+
+- `Exclude`: `Exclude<T, U>` 는 U에 할당할 수 있는 타입을 제외한다. 차집합으로 이해할 수 있다.
+- 분배법칙: 조건부 타입에서 분배법칙이 적용된다. 예를 들어 `A | B | C extends U ? X : Y` 는 `A extends U ? X : Y`, `B extends U ? X : Y`, `C extends U ? X : Y` 가 된다. `T extends U ? X : Y` 에서 T 유니언 타입은 개별 구성 요소를 확인한다.
+
+T가 U에 속한다면, never를 반환한다.
+
+## **Awaited**
+
+### 문제
+
+Promise와 같은 타입에 감싸인 타입이 있을 때, 안에 감싸인 타입이 무엇인지 가르키는 타입을 구현하는 문제이다.
+
+### 코드
+
+```
+type MyAwaited<T> = T extends PromiseLike<infer D> ? MyAwaited<D> : T;
+```
+
+### 풀이
+
+Promise에 감싸진 리턴 타입을 반환하기 위해 T가 Promise라면 Promise를 재귀적으로 풀어주고 그렇지 않다면 T를 반환하면 된다.
+
+예를 들어 타입 `X`에서 Promise로 감싸진 타입을 가져올 때 다음처럼 동작한다.
+
+```
+type MyAwaited<T> = T extends PromiseLike<infer D> ? MyAwaited<D> : T;
+
+type X = Promise<string>
+type Foo = MyAwaited<X> // string
+```
+
+`MyAwaited<Promise<string>>`은 `PromiseLike<infer D>`타입에 해당하므로 다시 `MyAwaited<D>` 을 호출한다. 여기서 `infer D` 로 string을 추론한다. `MyAwaited<string>` 은 `PromiseLike`타입이 아니므로 타입 `string`을 반환한다.
+
+### `infer`란?
+
+조건부 타입에서 `infer` 키워드를 이용해 새로운 타입 변수를 선언적으로 정의할 수 있다. `type Flatten<Type> = Type extends Array<infer Item> ? Item : Type;`
+
+### `Promise`가 아닌 `PromiseLike`를 사용하는 이유
+
+`Promise`가 아닌 `PromiseLike`를 사용하는 이유는 아래 테스트 케이스가 존재하기 때문이다.
+
+```
+type T = { then: (onfulfilled: (arg: number) => any) => any }
+```
+
+`PromiseLike`타입에는 후속처리 메서드인 then만 가지고 있다. 이를 통해 커스텀 비동기 처리를 유연하게 정의할 수 있다.
+
+```
+// https://github.com/microsoft/TypeScript/blob/main/src/lib/es5.d.ts
+
+interface PromiseLike<T> {
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(
+        onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null,
+        onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null
+      ): PromiseLike<TResult1 | TResult2>;
+}
+```
+
+## **If**
+
+### 문제
+
+조건 C가 참이면 A, 아니면 B를 반환하는 타입을 구현하자.
+
+### 코드
+
+```
+type If<C extends boolean, T, F> = C extends true ? T : F;
+```
+
+### 풀이
+
+C는 true, false만 가능하도록 `boolean` 타입으로 제한하고 C 조건에 따라 T, F를 리턴하면 된다.
+
+## Concat
+
+### 문제
+
+Array.concat 함수를 타입 시스템에서 구현하자. 인수를 왼쪽부터 concat한 새로운 배열을 반환하자.
+
+### 코드
+
+```
+// 오답
+type Concat<T extends unknown[], U extends unknown[]> = [
+  T extends [] ? never : T[number],
+  U extends [] ? never : U[number]
+];
+
+type Foo = Concat<['1', 2, 3], []>; // [2 | 3 | "1", never]
+```
+
+```
+// 정답
+type Tuple = readonly unknown[];
+type Concat<T extends Tuple, U extends Tuple> = [...T, ...U];
+
+type Foo = Concat<['1', 2, 3], []>; //  ["1", 2, 3]
+```
+
+### 풀이
+
+T와 U를 concat할 수 있도록 T와 U를 배열로 타입을 제한했다. 요소의 타입으로 이루어진 튜플을 반환할 수 있도록 `T[number]` 를 했다. 그러나 `T[number]`는 배열의 요소 타입으로 이뤄진 유니언 타입을 추출한다. 그리고 빈 배열인 경우 never 타입이 반환되므로 오답이다.
+
+여기서 T와 U를 배열타입으로 제한했으므로 열거 가능하다.
+
+## **Includes**
+
+### 문제
+
+JavaScript의 `Array.includes` 함수를 타입 시스템에서 구현하세요. 타입은 두 인수를 받고, `true` 또는 `false`를 반환하자.
+
+### 코드
+
+```
+// 오답
+type Includes<T extends readonly unknown[], U> = U extends T[number] ? true : false;
+```
+
+T 배열의 요소를 키로 갖는 타입을 만들고 U가 T의 키인지 확인하면 해결할 수 있을 것 같지만, U가 프로퍼티 키로 사용할 수 있을 때만 통과된다. ([참고](https://github.com/type-challenges/type-challenges/issues/1568))
+
+```
+// 오답
+type Includes<T extends readonly any[], U> = {
+  [P in T[number]]: true
+}[U] extends true ? true : false;
+```
+
+이를 해결하기 위해 배열의 첫번째 요소와 타입이 같은지 재귀적으로 타입을 확인해야 한다.
+
+```
+// 정답
+type Includes<T extends readonly unknown[], U> =
+  T extends [infer First, ...infer Rest]
+    ? Equal<First, U> extends true ? true : Includes<Rest, U>
+    : false;
+```
+
+### 풀이
+
+U가 T의 구성 요소인지 확인하기 위해 T를 인덱스 접근 타입으로 변경하고 U가 이 유니온 타입에 속하는지 조건부로 true 또는 false를 반환한다. 그런데 이 코드는 primitive type만 통과하고 객체나 타입 자체는 통과하지 않는다. 예를 들어 `{ a: 'A'}` 는 `{ }`의 서브 타입으로 true를 반환한다.
+
+> `infer` 키워드를 복습하고 가자. `infer`은 조건부 타입에서 **참으로 평가**될 때 사용할 수 있는 타입을 추론하는 데 사용한다.
+
+참고로 `@type-challenges/utils` 의 Equal은 아래처럼 구현되어 있다.
+
+```
+Equal<X, Y> =
+    (<T>() => T extends X ? 1 : 2) extends
+    (<T>() => T extends Y ? 1 : 2) ? true : false;
+```
+
+## **Push**
+
+### 문제
+
+`Array.push`의 제네릭 버전을 구현하자.
+
+### 코드
+
+```
+type Push<T extends unknown[], U> = [...T, U];
+```
+
+### 풀이
+
+T를 배열로 타입을 제한하고 배열 디스트럭쳐링을 이용해 배열 타입을 반환한다.
+
+## **Unshift**
+
+### 문제
+
+`Array.unshift`의 타입 버전을 구현하자.
+
+### 코드
+
+```
+type Unshift<T extends unknown[], U> = [U, ...T];
+```
+
+### 풀이
+
+Push 문제와 동일하다. T와 U 순서만 바꿔주면 된다.
+
+## **Parameters**
+
+### 문제
+
+내장 제네릭 `Parameters<T>`를 이를 사용하지 않고 구현하자.
+
+### 코드
+
+```
+type MyParameters<T> = T extends (...args: infer D) => unknown ? D : any;
+
+const temp = ['1'];
+type x = MyParameters<typeof temp>; // 타입 에러가 나지 않는다.
+```
+
+타입 에러가 나지 않는데, 이를 막으려면 타입 T를 함수로 제한하면 된다.
+
+```
+type MyParameters<T extends (...args: any[]) => any> = T extends (...any: infer S) => any ? S : any
+```
+
+### 풀이
+
+조건부 타입으로 함수 타입이라면 args를 추론한 D 타입을 반환한다. 하지만 T타입이 함수로 제한하지 않아 함수가 아닌 타입에서 에러가 나지 않아서 아쉽다.
