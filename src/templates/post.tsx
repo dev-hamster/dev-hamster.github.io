@@ -28,15 +28,33 @@ export default function PageTemplate({ data, children }: TemplateProps) {
     <>
       <Header />
       <Layout>
-        <MDXProvider components={shortcodes}>
+        <MDXProvider
+          components={{
+            // github-markdown list style 임시 처리
+            ul: (props) => <ul {...props} style={{ listStyle: 'revert' }} />,
+            // github-markdown order 임시 처리
+            ol: (props) => (
+              <ul {...props} style={{ listStyleType: 'decimal' }} />
+            ),
+            ...shortcodes,
+          }}
+        >
           <article className='markdown-body'>
             <h1>{frontmatter.title}</h1>
             {thumbnail && (
-              <GatsbyImage
-                image={thumbnail}
-                alt={frontmatter.title}
-                className='w-full'
-              />
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  paddingBottom: '56.25%', // 16:9 종횡비
+                }}
+              >
+                <GatsbyImage
+                  image={thumbnail}
+                  alt={frontmatter.title}
+                  className='absolute top-0 left-0 w-full h-full object-cover'
+                />
+              </div>
             )}
             {children}
           </article>
