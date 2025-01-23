@@ -23,6 +23,12 @@ const config: GatsbyConfig = {
               maxWidth: 1200,
             },
           },
+          {
+            resolve: 'gatsby-remark-prismjs', // 코드 하이라이트
+            options: {
+              noInlineHighlight: true,
+            },
+          },
         ],
       },
     },
