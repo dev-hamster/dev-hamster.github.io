@@ -50,13 +50,6 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: `${__dirname}/src/content`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `assets`,
         path: `${__dirname}/src/assets`,
       },
@@ -68,6 +61,7 @@ const config: GatsbyConfig = {
           components: path.resolve(__dirname, 'src/components'),
           utils: path.resolve(__dirname, 'src/utils'),
           assets: path.resolve(__dirname, 'src/assets'),
+          constants: path.resolve(__dirname, 'src/constants'),
         },
         extensions: ['md'],
       },
