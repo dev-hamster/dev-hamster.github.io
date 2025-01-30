@@ -8,7 +8,7 @@ import { Project as TProject } from 'types/resume';
 
 const ListItem = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className='flex gap-2 text-sm'>
+    <div className='flex gap-2 text-base'>
       <div className='w-2 min-w-2 min-h-2 h-2 mt-2 rounded-sm bg-midnight-200 ' />
       {children}
     </div>
@@ -34,24 +34,26 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
           <div key={title}>
             {/* 프로젝트명, 날짜 */}
             <div>
-              <div className='flex items-center gap-2'>
-                <p className='text-sm font-bold text-midnight-900'>{title}</p>
+              <div className='flex items-center flex-wrap gap-2'>
+                <p className='text-base font-bold text-midnight-900'>{title}</p>
                 {titleCaption && (
-                  <p className='text-sm text-midnight-900'>— {titleCaption}</p>
+                  <p className='text-base text-midnight-900'>
+                    — {titleCaption}
+                  </p>
                 )}
               </div>
-              <p className='flex items-center gap-1 mt-2 text-sm leading-5 font-ubuntu'>
+              <p className='flex items-center gap-1 mt-2 text-base leading-5 font-ubuntu'>
                 <CalendarIcon width={16} height={16} />
                 {date}
               </p>
             </div>
             {/* 기술 스택 */}
             {techStack && techStack.length > 0 && (
-              <div className='flex flex-wrap gap-2 mt-2'>
+              <div className='flex flex-wrap gap-2 mt-2 font-ubuntu'>
                 {techStack.map((tech, idx) => (
                   <p
                     key={idx}
-                    className='pl-1 pr-1 pt-[1px] pb-[1px] w-fit bg-gray-300 rounded-sm text-xs text-midnight-500'
+                    className='pl-1 pr-1 pt-[1px] pb-[1px] w-fit bg-gray-300 rounded-sm text-sm text-midnight-500'
                   >
                     {tech}
                   </p>
@@ -67,7 +69,7 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
                     href={url}
                     target='_blank'
                     rel='noreferrer'
-                    className='flex items-center  gap-[2px] mt-2 underline text-xs'
+                    className='flex items-center  gap-[2px] mt-2 underline text-sm'
                   >
                     {icon === 'github' ? (
                       <GithubIcon width={12} height={12} />

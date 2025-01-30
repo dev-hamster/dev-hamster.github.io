@@ -9,7 +9,10 @@ export const Intro = () => {
   return (
     <div className='mt-16 max-w-[768px] m-auto'>
       <div className='mt-16 ml-6 mr-6'>
-        <p className='text-2xl font-bold'>박진아</p>
+        <div className='flex items-center gap-3'>
+          <p className='text-2xl font-bold'>박진아</p>
+          <p className='text-xl'>프론트엔드 개발자</p>
+        </div>
         <Paragraph>
           저는
           <strong>
@@ -35,9 +38,9 @@ export const Intro = () => {
         <div className='mt-5'>
           <div className='flex gap-1 items-center ml-2'>
             <EmailIcon />
-            <p className='text-xs text-midnight-900'>dndbekfrl1@gmail.com</p>
+            <p className='text-sm text-midnight-900'>dndbekfrl1@gmail.com</p>
           </div>
-          <div className='flex gap-2 mt-2'>
+          <div className='flex gap-2 mt-3'>
             <Link url='https://dev-hamster.github.io/' color='blue'>
               <EarthIcon width='16' height='16' />
               blog
@@ -61,7 +64,7 @@ export const Intro = () => {
 };
 
 const Paragraph = ({ children }: { children: React.ReactNode }) => {
-  return <p className='mt-2 text-sm leading-5'>{children}</p>;
+  return <p className='mt-2 text-base leading-6'>{children}</p>;
 };
 
 const Link = ({
@@ -82,7 +85,7 @@ const Link = ({
   return (
     <a
       className={`
-          flex w-fit gap-[2px] justify-center items-center pt-1 pb-1 pl-2 pr-2 border-[1px] rounded-3xl text-xs whitespace-nowrap ${style[color]} underline`}
+          flex w-fit gap-[2px] justify-center items-center pt-1 pb-1 pl-2 pr-2 border-[1px] rounded-3xl text-xs ${style[color]} underline`}
       href={url}
       target='_blank'
       rel='noreferrer'

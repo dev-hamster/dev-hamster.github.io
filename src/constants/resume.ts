@@ -55,7 +55,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     date: '2022.09 - 2022.11',
     intro: '테마별 타로, 사주 컨텐츠를 제공합니다.',
     team: 'FE 3명, BE 4명',
-    contribution: 10,
+    contribution: 25,
     link: [{ url: 'https://borra.today/', text: '서비스 링크' }],
     techStack: [
       'Next.js',
@@ -82,7 +82,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       ),
     intro: 'NHpay의 사주/운세로 서비스되는 페이지 입니다(서비스 종료).',
     team: 'FE 2명, BE 2명',
-    contribution: 10,
+    contribution: 25,
     description: [
       '사주 정보 입력 폼: 사주 입력값의 유효성을 검증하기 위해 yup을 사용했습니다. 스키마 기반 검증 방식을 활용해 검증 로직을 중앙화하여 코드베이스를 간결하게 했습니다.',
       '웹뷰 환경에서 다양한 화면 크기에서도 일관된 사용자 경험을 제공하기 위해 meta 태그를 활용하여 기기 해상도에 맞는 화면 조정과 핀치 줌을 방지했습니다.',
@@ -130,7 +130,7 @@ export const PROJECT: Project[] = [
     team: 'FE 3명, BE 3명',
     intro:
       '역사에 대한 관심을 고취하기 위해 근처의 사적지를 알림받고 과거의 모습을 보는 서비스입니다.',
-    contribution: 15,
+    contribution: 25,
     description: [
       '로컬 환경에서 AR, 하이브리드 앱 개발을 위한 https 환경 세팅 허스키를 이용한 커밋 메세지 자동화 기존 라이브러리에 누락된 타입 지원을 위해 타입 모듈 확장했습니다.',
       '위치 기반 AR 컨텐츠 가까운 사적지 AR 마커를 보여주고 터치시 사적지의 과거 모습을 보여주었습니다.',
