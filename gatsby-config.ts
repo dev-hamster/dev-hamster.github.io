@@ -48,11 +48,26 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/src/content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/assets`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
           components: path.resolve(__dirname, 'src/components'),
           utils: path.resolve(__dirname, 'src/utils'),
+          assets: path.resolve(__dirname, 'src/assets'),
         },
         extensions: ['md'],
       },
@@ -75,6 +90,14 @@ const config: GatsbyConfig = {
             file: `https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap`,
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        },
       },
     },
   ],
