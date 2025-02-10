@@ -1,5 +1,21 @@
 import { OtherExperience, Project, WorkExperience } from 'types/resume';
 
+export const INTRO =
+  `컴퓨터공학을 전공하며 **"사용자가 쉽게 사용할 수 있는 서비스란 무엇일까?"** 를 고민하다 UX/UI 학원을 수강했으나, 디자인보다 **UI를 직접 구현하고 최적화하는 과정에서 흥미를 느껴 프론트엔드 개발을 선택**했습니다.  
+
+사용자가 목표를 빠르게 달성할 수 있도록 고민하며 **퍼포먼스 최적화와 개발 환경 개선**에 관심이 있습니다. 
+
+스타트업에서 1년간 근무하며 제약된 환경에서도 요구사항을 해결해 나가는 경험을 쌓았고, 프로젝트를 통해 **React Query의 낙관적 업데이트와 캐싱 전략을 활용해 API 호출을 50% 절감**하고, **리플로우 최적화로 드래그 성능을 60% 향상**시켰습니다.  
+
+또한, **Husky, Docker, 워크플로우 자동화로 CI/CD를 구축**했고, 현재는 **FSD 적용을 통해 코드 결합도를 낮추는 감각을 기르고 있습니다.**  
+
+React의 동작 원리를 공부하고, 라이브러리를 직접 구현하며 개발 역량을 확장하고 있습니다.  
+앞으로도 팀과 제품에 기여하는 개발자로 성장하고 싶습니다.
+`
+    .split('\n')
+    .map((x) => x.trim())
+    .filter((x) => x);
+
 export const SKILLS_AND_TOOLS = [
   {
     title: 'TypeScript',
@@ -92,7 +108,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 
 export const PROJECT: Project[] = [
   {
-    title: '트윙클',
+    title: '북마크 링크 관리 프로젝트 - 트윙클',
     date: '2023.03 - 2023.06',
     titleCaption: '프론트엔드 (팀 프로젝트)',
     link: [
@@ -116,7 +132,7 @@ export const PROJECT: Project[] = [
     ],
   },
   {
-    title: '서울 팝',
+    title: 'AR 기반 역사 지도 - 서울 팝',
     date: '2024.04 - 2024.05 （6-week）',
     titleCaption: '프론트엔드 (팀 프로젝트)',
     link: [
@@ -129,7 +145,7 @@ export const PROJECT: Project[] = [
       'React.js, TypeScript, zustand, react-query, a-frame, ar.js'.split(','),
     team: 'FE 3명, BE 3명',
     intro:
-      '역사에 대한 관심을 고취하기 위해 근처의 사적지를 알림받고 과거의 모습을 보는 서비스입니다.',
+      '역사에 대한 관심을 고취하기 위해 근처의 사적지를 알림받고 과거의 모습을 AR로 보는 서비스입니다.',
     contribution: 25,
     description: [
       '로컬 환경에서 AR, 하이브리드 앱 개발을 위한 https 환경 세팅 허스키를 이용한 커밋 메세지 자동화 기존 라이브러리에 누락된 타입 지원을 위해 타입 모듈 확장했습니다.',
@@ -138,7 +154,7 @@ export const PROJECT: Project[] = [
     ],
   },
   {
-    title: 'Alien Girls',
+    title: '인터렉션 기반 웹 페이지 - Alien Girls',
     date: '2022 09 - 2022 10',
     titleCaption: '웹 개발 (팀 프로젝트)',
     link: [{ url: 'github.com/dev-hamster/alien-girls', icon: 'github' }],
@@ -152,6 +168,22 @@ export const PROJECT: Project[] = [
       '드래그 이벤트 최적화: 매끄러운 드래그 경험을 제공하고 리플로우를 최적화하여 성능을 개선했습니다.',
       '전역 상태 관리: Recoil을 활용해 작업 표시줄에서 실행 중인 작업을 실시간으로 보여줄 수 있도록 전역 상태를 효과적으로 관리했습니다.',
       '디자이너와의 협업: Figma를 도입해 디자이너와의 협업 효율을 높였고, UI/UX를 일관성 있게 구현했습니다.',
+    ],
+  },
+];
+
+export const EDUCATION: OtherExperience[] = [
+  {
+    title: '가천대학교',
+    date: '2017 03 - 2022 08',
+    description: ['대학교(학사) | 컴퓨터공학 졸업'],
+  },
+  {
+    title: '삼성 청년 SW 아카데미',
+    organization: '멀티캠퍼스',
+    date: '2023 06 - 2024 06',
+    description: [
+      '알고리즘, 웹 개발, 프로젝트 기반의 커리큘럼으로 1600시간 교육을 수료했습니다. ',
     ],
   },
 ];
@@ -185,14 +217,6 @@ export const OTHER_EXPERIENCE: OtherExperience[] = [
     link: [{ url: 'https://github.com/fe-deep-dive/study-js-deep-dive' }],
   },
   {
-    title: '삼성 청년 SW 아카데미',
-    organization: '멀티캠퍼스',
-    date: '2023 06 - 2024 06',
-    description: [
-      '알고리즘, 웹 개발, 프로젝트 기반의 커리큘럼으로 1600시간 교육을 수료했습니다. ',
-    ],
-  },
-  {
     title: '삼성 청년 SW 아카데미 1학기 프로젝트 우수상',
     organization: '멀티캠퍼스',
     date: '2023 11',
@@ -220,24 +244,12 @@ export const OTHER_EXPERIENCE: OtherExperience[] = [
     description: ['MDN kr 문서 오타 수정 기여했습니다.'],
   },
   {
-    title: 'MDN 문서 오타 수정 기여',
-    organization: 'MDN',
-    date: '2022 10',
-    description: ['MDN kr 문서 오타 수정 기여했습니다.'],
-  },
-  {
     title: '청소년 코딩 멘토링 활동',
     organization: '스마일게이트',
     date: '2021 08 - 2022 03',
     description: [
       '지역 아동센터에서 마이크로비트를 활용한 코딩 멘토로 활동하며, 12명의 아이들과 매주 2시간씩 수업을 진행했습니다. 아이들이 흥미를 느끼고 몰입할 수 있는 프로젝트형 수업을 진행했습니다.',
     ],
-  },
-  {
-    title: '가천대학교',
-    organization: 'MDN',
-    date: '2017 03 - 2022 08',
-    description: ['대학교(학사) | 컴퓨터공학 졸업'],
   },
   {
     title: '정보처리기사',

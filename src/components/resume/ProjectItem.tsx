@@ -83,13 +83,10 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
             )}
 
             <div className='flex flex-col gap-1 mt-2'>
-              {/* 조직명, 소개 */}
-              {organization && (
-                <>
-                  <ListItem>근무처: {organization}</ListItem>
-                  {intro && <ListItem>소개: {intro}</ListItem>}
-                </>
-              )}
+              {/* 조직명 */}
+              {organization && <ListItem>근무처: {organization}</ListItem>}
+              {/* 소개 */}
+              {intro && <ListItem>소개: {intro}</ListItem>}
               {/* 팀 구성 */}
               {team && <ListItem>팀 구성: {team}</ListItem>}
               {/* 기여도 */}

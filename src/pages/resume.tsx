@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  Education,
   Footer,
   Intro,
   OtherExperience,
@@ -16,6 +17,7 @@ const ResumePage = () => {
       <SkillsAndTools />
       <WorkExperience />
       <Project />
+      <Education />
       <OtherExperience />
       <Footer />
     </div>

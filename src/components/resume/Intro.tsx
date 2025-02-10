@@ -1,9 +1,14 @@
 import React from 'react';
+import Markdown from 'react-markdown';
 
 import LinkIcon from 'assets/ico-earth-purple.svg';
 import EarthIcon from 'assets/ico-earth.svg';
 import EmailIcon from 'assets/ico-email.svg';
 import GithubIcon from 'assets/ico-github.svg';
+import { INTRO } from 'constants/resume';
+
+const text =
+  '컴퓨터공학을 전공하며 **"사용자가 쉽게 사용할 수 있는 서비스란 무엇일까?"**  고민하다 UX/UI 학원을 수강했습니다. 디자인보다  **UI를직접 구현하고 최적화하는 과정에서 흥미를 느껴 프론트엔드 개발을 선택**했습니다.';
 
 export const Intro = () => {
   return (
@@ -13,27 +18,12 @@ export const Intro = () => {
           <p className='text-2xl font-bold'>박진아</p>
           <p className='text-xl'>프론트엔드 개발자</p>
         </div>
-        <Paragraph>
-          저는
-          <strong>
-            사용자와 빠른 상호작용을 보장하고, 효율적인 개발 환경을 구축하는
-            프론트엔드 개발자
-          </strong>
-          입니다.
-        </Paragraph>
-        <Paragraph>
-          <strong>React Query</strong>의 낙관적 업데이트와 캐싱 전략으로
-          '좋아요' 기능을 즉시 처리하고, API 호출을 50% 절감했습니다. 또한,
-          리플로우 최적화로 드래그 성능을 60% 향상시켰습니다.
-        </Paragraph>
-        <Paragraph>
-          <strong>Husky와 Docker</strong>로 <strong>커밋 컨벤션 자동화</strong>
-          와<strong>CI/CD 파이프라인 구축</strong>을 경험하며, 현재는
-          <strong>FSD</strong> 적용으로 <strong>유지보수성</strong>을 강화하는
-          프로젝트를 진행 중입니다.
-          <strong>팀 생산성을 높여 제품 개발 속도에 기여하는 개발자</strong>로
-          성장하고자 합니다.
-        </Paragraph>
+
+        {INTRO.map((content, idx) => (
+          <Paragraph key={idx}>
+            <Markdown>{content}</Markdown>
+          </Paragraph>
+        ))}
 
         <div className='mt-5'>
           <div className='flex gap-1 items-center ml-2'>

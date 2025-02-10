@@ -1,3 +1,4 @@
+export { Education } from './Education';
 export { Footer } from './Footer';
 export { Intro } from './Intro';
 export { OtherExperience } from './OtherExperience';
