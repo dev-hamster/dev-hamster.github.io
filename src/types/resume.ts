@@ -17,7 +17,9 @@ export interface Project {
   link?: Link[]; // 프로젝트 링크
 }
 
-export type WorkExperience = Project;
+export interface WorkExperience extends Project {
+  project?: Project[];
+}
 
 export interface OtherExperience {
   title: string; // 활동명

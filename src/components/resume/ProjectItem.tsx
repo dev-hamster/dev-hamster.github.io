@@ -4,13 +4,14 @@ import CalendarIcon from 'assets/ico-calendar.svg';
 import GithubIcon from 'assets/ico-github.svg';
 import LinkIcon from 'assets/ico-link.svg';
 
+import Markdown from 'react-markdown';
 import { Project as TProject } from 'types/resume';
 
-const ListItem = ({ children }: { children: React.ReactNode }) => {
+const ListItem = ({ text }: { text: string }) => {
   return (
     <div className='flex gap-2 text-base'>
       <div className='w-2 min-w-2 min-h-2 h-2 mt-2 rounded-sm bg-midnight-200 ' />
-      {children}
+      <Markdown>{text}</Markdown>
     </div>
   );
 };
@@ -69,10 +70,12 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
                     href={url}
                     target='_blank'
                     rel='noreferrer'
-                    className='flex items-center  gap-[2px] mt-2 underline text-sm'
+                    className='flex items-center gap-1 mt-2 text-sm'
                   >
                     {icon === 'github' ? (
-                      <GithubIcon width={12} height={12} />
+                      <div className='mt-1'>
+                        <GithubIcon width={12} height={12} />
+                      </div>
                     ) : (
                       <LinkIcon width={14} height={14} />
                     )}
@@ -84,16 +87,16 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
 
             <div className='flex flex-col gap-1 mt-2'>
               {/* 조직명 */}
-              {organization && <ListItem>근무처: {organization}</ListItem>}
+              {organization && <ListItem text={`근무처: ${organization}`} />}
               {/* 소개 */}
-              {intro && <ListItem>소개: {intro}</ListItem>}
+              {intro && <ListItem text={`소개: ${intro}`} />}
               {/* 팀 구성 */}
-              {team && <ListItem>팀 구성: {team}</ListItem>}
+              {team && <ListItem text={`팀 구성: ${team}`} />}
               {/* 기여도 */}
-              {contribution && <ListItem>기여도: {contribution}%</ListItem>}
+              {contribution && <ListItem text={`기여도: ${contribution}%`} />}
               {/* 프로젝트 소개 */}
               {description.map((desc, idx) => (
-                <ListItem key={idx}>{desc}</ListItem>
+                <ListItem key={idx} text={desc} />
               ))}
             </div>
           </div>

@@ -7,16 +7,15 @@ import EmailIcon from 'assets/ico-email.svg';
 import GithubIcon from 'assets/ico-github.svg';
 import { INTRO } from 'constants/resume';
 
-const text =
-  '컴퓨터공학을 전공하며 **"사용자가 쉽게 사용할 수 있는 서비스란 무엇일까?"**  고민하다 UX/UI 학원을 수강했습니다. 디자인보다  **UI를직접 구현하고 최적화하는 과정에서 흥미를 느껴 프론트엔드 개발을 선택**했습니다.';
-
 export const Intro = () => {
   return (
     <div className='mt-16 max-w-[768px] m-auto'>
       <div className='mt-16 ml-6 mr-6'>
-        <div className='flex items-center gap-3'>
+        <div className='flex flex-wrap items-center gap-3'>
           <p className='text-2xl font-bold'>박진아</p>
-          <p className='text-xl'>프론트엔드 개발자</p>
+          <p className='text-xl'>
+            협업과 효율적인 코드로 사용자 경험을 개선하는 프론트엔드 개발자
+          </p>
         </div>
 
         {INTRO.map((content, idx) => (
@@ -54,7 +53,7 @@ export const Intro = () => {
 };
 
 const Paragraph = ({ children }: { children: React.ReactNode }) => {
-  return <p className='mt-2 text-base leading-6'>{children}</p>;
+  return <div className='mt-2 text-base leading-6'>{children}</div>;
 };
 
 const Link = ({
@@ -75,7 +74,7 @@ const Link = ({
   return (
     <a
       className={`
-          flex w-fit gap-[2px] justify-center items-center pt-1 pb-1 pl-2 pr-2 border-[1px] rounded-3xl text-xs ${style[color]} underline`}
+          flex w-fit gap-[2px] justify-center items-center pt-1 pb-1 pl-2 pr-2 border-[1px] rounded-3xl text-xs ${style[color]}`}
       href={url}
       target='_blank'
       rel='noreferrer'

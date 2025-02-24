@@ -12,14 +12,18 @@ export const Card = ({ title, body, thumbnail }: CardProps) => {
   const src = thumbnail ? getImage(thumbnail) : '';
 
   return (
-    <div className='flex flex-col gap-4 w-full h-full md:h-[300px] p-6 rounded-xl border border-black bg-white'>
+    <div className='flex flex-col gap-[14px] w-full min-w-[210px] h-[323px] pt-4 pl-[14px] pr-[14px] rounded-xl border border-black bg-white'>
       {src && (
-        <div className='w-full md:aspect-[50/47] aspect-[16/9] rounded-xl bg-slate-300 overflow-hidden'>
-          <GatsbyImage className='object-contain' image={src} alt={title} />
-        </div>
+        <GatsbyImage
+          className='self-center min-w-[192px] w-full h-[145px] rounded-xl'
+          image={src}
+          alt={title}
+        />
       )}
-      <p className='text-lg font-semibold text-balance line-clamp-2'>{title}</p>
-      <div className='line-clamp-3' style={summaryStyle}>
+      <p className='h-[55px] text font-semibold text-pretty line-clamp-2'>
+        {title}
+      </p>
+      <div className='w-full line-clamp-3 text-pretty' style={summaryStyle}>
         {body}
       </div>
     </div>

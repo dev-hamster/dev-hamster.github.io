@@ -22,7 +22,7 @@ const IndexPage = ({ data }: IndexPageProps) => {
     <main>
       <Header />
       <Layout>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-4'>
           {posts.map((post) => (
             <Link key={post.id} to={post.frontmatter.slug}>
               <Card
@@ -52,7 +52,7 @@ export const i = graphql`
           slug
           thumbnail {
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
             }
           }
         }

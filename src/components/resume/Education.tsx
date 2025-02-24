@@ -35,7 +35,7 @@ export const Education = () => {
                   href={url}
                   target='_blank'
                   rel='noreferrer'
-                  className='flex items-center gap-[2px] mt-1 underline text-base
+                  className='flex items-center gap-[2px] mt-1 text-base
                     '
                 >
                   <LinkIcon width={20} height={20} />

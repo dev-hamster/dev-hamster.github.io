@@ -3,14 +3,14 @@ import React from 'react';
 import CalendarIcon from 'assets/ico-calendar.svg';
 import LinkIcon from 'assets/ico-link.svg';
 
-import { OTHER_EXPERIENCE } from 'constants/resume';
+import { CERTIFICATES_AND_AWARDS } from 'constants/resume';
 import { Section } from './Section';
 
-export const OtherExperience = () => {
+export const CertificatesAndAwards = () => {
   return (
-    <Section title='Other Experience'>
+    <Section title='Certificates & Awards'>
       <div className='flex flex-col gap-4'>
-        {OTHER_EXPERIENCE.map(
+        {CERTIFICATES_AND_AWARDS.map(
           ({ title, organization, date, description, link }) => (
             <div key={title}>
               {/* 활동명 */}
@@ -41,7 +41,7 @@ export const OtherExperience = () => {
                     className='flex items-center gap-[2px] mt-1 text-base
                     '
                   >
-                    <LinkIcon width={14} height={14} />
+                    <LinkIcon width={20} height={20} />
                     <span className='truncate'>{url}</span>
                   </a>
                 ))}

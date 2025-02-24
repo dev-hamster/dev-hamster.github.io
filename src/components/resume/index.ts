@@ -1,3 +1,4 @@
+export { CertificatesAndAwards } from './CertificatesAndAwards';
 export { Education } from './Education';
 export { Footer } from './Footer';
 export { Intro } from './Intro';
