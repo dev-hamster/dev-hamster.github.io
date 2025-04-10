@@ -3,7 +3,6 @@ import { OtherExperience, Project, WorkExperience } from 'types/resume';
 export const INTRO =
   `약 1년간 **스타트업**에서 실무를 시작으로, 개인 프로젝트와 **삼성 청년 소프트웨어 아카데미(SSAFY)** 과정를 통해 성장했습니다. 
   **책임감을 가지고 마감일을 준수**하며 **공통 컴포넌트와 라이브러리를 제안으로 사용자 서비스에 기여**했고, 이후 여러 프로젝트를 통해 **협업과 문제 해결 능력**을 키웠습니다.
-
 `
     .split('\n')
     .map((x) => x.trim())
@@ -39,6 +38,34 @@ export const SKILLS_AND_TOOLS = [
 ];
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
+  {
+    title: '(주)링글잉글리시에듀케이션서비스',
+    date: '2025.03 - 현재',
+    description: [
+      '영어 회화 서비스인 링글잉글리시의 프론트엔드 개발자로 신규 기능 개발 및 유지보수를 담당하고 있습니다.',
+    ],
+    project: [
+      {
+        title: 'B2B/B2C 고객 분기 로직 리팩토링',
+        date: '2025.03 (2주)',
+        intro:
+          'B2B/B2C 분기 로직이 53개 컴포넌트에 하드코딩되어 유지보수와 버그 수정이 비효율적인 문제를 해결했습니다.',
+        team: 'FE 1명, PM 1명',
+        contribution: 50,
+        link: [
+          {
+            url: 'https://www.ringleplus.com/',
+            text: '서비스 링크',
+          },
+        ],
+        techStack: ['Next.js', 'TypeScript', 'react-query'],
+        description: [
+          '`useCustomerType` 커스텀 훅과 상수 기반 로직 설계로 53개의 컴포넌트의 조건 분기를 통합, TypeScript 인터페이스로 타입 안정성 확보.',
+          '출석체크 인증이 누락되던 특정 B2B 고객 케이스를 식별 및 수정하여 실제 운영 이슈 해결',
+        ],
+      },
+    ],
+  },
   {
     title: '주식회사 에프엘이에스',
     date: '2022.01 - 2022.11',
