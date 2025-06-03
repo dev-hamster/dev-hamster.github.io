@@ -1,23 +1,14 @@
-// v.2.0.0
 import { OtherExperience, Project, WorkExperience } from 'types/resume';
 
 export const INTRO =
-  `사용자의 더 나은 경험을 위해 고민하며 **약 1년간 스타트업에서 프론트엔드 개발**을 담당했습니다. 기능 구현뿐 아니라 **60여 개의 테스트 케이스 작성, 버그 리포트 대응 등을 통해 서비스 안정성 향상**에 기여했습니다.
-  이제는 **개발자와 협업하며 품질을 개선하는 QA 엔지니어**로 성장하고자 합니다. **커밋 컨벤션 자동화(husky), Docker 기반 CI/CD 구축 등 자동화 경험**을 바탕으로, **재사용 가능한 테스트 케이스를 CI 파이프라인에 통합해 일관된 품질**을 유지할 수 있습니다. **신뢰받는 서비스를 만드는 QA 엔지니어**가 되겠습니다.`
+  `약 1년간 **스타트업**에서 실무를 시작으로, 개인 프로젝트와 **삼성 청년 소프트웨어 아카데미(SSAFY)** 과정를 통해 성장했습니다. 
+  **책임감을 가지고 마감일을 준수**하며 **공통 컴포넌트와 라이브러리를 제안으로 사용자 서비스에 기여**했고, 이후 여러 프로젝트를 통해 **협업과 문제 해결 능력**을 키웠습니다.
+`
     .split('\n')
     .map((x) => x.trim())
     .filter((x) => x);
 
 export const SKILLS_AND_TOOLS = [
-  {
-    title: 'Jest',
-    content: '유닛 테스트와 테스트 커버리지를 통한 안정성 확보 경험 보유', // TODO: 추가 설명
-  },
-  {
-    title: 'React Testing Library',
-    content: '사용자 관점의 상호작용 테스트 작성 가능',
-    // TODO: 추가 설명
-  },
   {
     title: 'TypeScript',
     content: '커스텀 타입 정의로 팀 코드의 안정성을 높일 수 있음',
@@ -49,36 +40,16 @@ export const SKILLS_AND_TOOLS = [
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     title: '(주)링글잉글리시에듀케이션서비스',
-    date: '2025.03 - 2025.06',
+    date: '2025.03 - 현재',
     description: [
-      '플러스, 틴즈, 튜터 웹 서비스의 유지보수 및 기능 개선을 **사용자 관점**에서 수행했으며, 버그 리포트 발생 시 즉각 대응하여 안정적인 서비스 운영을 지원했습니다.',
+      '영어 회화 서비스인 링글잉글리시의 프론트엔드 개발자로 신규 기능 개발 및 유지보수를 담당하고 있습니다.',
     ],
     project: [
       {
-        title: '틴즈 프로덕트, 영어 실력 진단 기능 도입',
-        date: '2025.05 (2주)',
-        intro:
-          '10대를 위한 링글 틴즈 프로덕트에 영어 실력 진단 기능을 도입했습니다.',
-        team: 'FE 1명, BE 1명',
-        contribution: 80,
-        link: [
-          {
-            url: 'https://www.ringleplus.com/',
-            text: '서비스 링크',
-          },
-        ],
-        techStack: ['Next.js', 'TypeScript', 'react-query'],
-        description: [
-          '틴즈 사용자 대상 영어 실력 진단 기능 과정에서 React Native 기반 복습 페이지를 웹뷰(Stackflow)로 전환하여 코드 공유성과 유지보수성을 개선',
-          '신규 기능에 대해 **60개 이상의 테스트 케이스**를 작성하고 QA 진행하여 **높은 사용량에도 안정성 확보**',
-          '도입 이후, 발화량 부족으로 진단이 어려운 일부 케이스를 식별, **상황에 맞는 사용자 안내 메시지를 기획·적용**해 사용자 이해도 및 불만 감소에 기여',
-        ],
-      },
-      {
-        title: 'B2B/B2C 고객 분기 로직 코드 리팩토링',
+        title: 'B2B/B2C 고객 분기 로직 리팩토링',
         date: '2025.03 (2주)',
         intro:
-          'B2B/B2C 분기 로직이 53개 컴포넌트에 하드코딩된 코드를 정책을 반영한 코드로 리팩토링했습니다.',
+          'B2B/B2C 분기 로직이 53개 컴포넌트에 하드코딩되어 유지보수와 버그 수정이 비효율적인 문제를 해결했습니다.',
         team: 'FE 1명, PM 1명',
         contribution: 50,
         link: [
@@ -89,8 +60,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
         ],
         techStack: ['Next.js', 'TypeScript', 'react-query'],
         description: [
-          'B2B 고객사별 정책 차이(메뉴 노출, 출석 기준 등)를 대응하기 위해, `useCustomerType` 커스텀 훅과 정책을 표현한 변수를 통해 53개의 컴포넌트 조건 분기를 개선, TypeScript 인터페이스로 타입 안정성 확보',
-          '정책 정합성을 위해 실제 페이지 기준 AS-IS / TO-BE 정책을 표로 정리하고 **유관 부서와 커뮤니케이션**했으며, 이 과정에서 운영상 문제를 식별 및 개선',
+          '`useCustomerType` 커스텀 훅과 상수 기반 로직 설계로 53개의 컴포넌트의 조건 분기를 통합, TypeScript 인터페이스로 타입 안정성 확보.',
+          '출석체크 인증이 누락되던 특정 B2B 고객 케이스를 식별 및 수정하여 실제 운영 이슈 해결',
         ],
       },
     ],
@@ -189,6 +160,20 @@ export const PROJECT: Project[] = [
       '**타입 확장**: **라이브러리의 누락된 타입 정의**로 **코드 안정성 개선**',
     ],
   },
+  {
+    title: '인터렉션 기반 웹 페이지 - Alien Girls',
+    date: '2022 09 - 2022 10',
+    link: [{ url: 'github.com/dev-hamster/alien-girls', icon: 'github' }],
+    techStack: 'React.js, TypeScript, recoil, ec2, Route53'.split(','),
+    team: '개발자 1명, 디자이너 1명',
+    intro:
+      'Windows 98 바탕화면 컨셉으로, 페이지를 탐색하며 아트웍을 감상하는 사이트입니다.',
+    contribution: 50,
+    description: [
+      '**드래그 이벤트 구현 및 최적화**: 매끄러운 드래그 경험을 제공하기 위해 리플로우를 최적화하여 **렌더링 60% 개선** ([블로그 링크](https://dev-hamster.github.io/%EB%93%9C%EB%9E%98%EA%B7%B8%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EA%B5%AC%ED%98%84%EA%B8%B01/))',
+      '**디자이너와의 협업**: Figma를 도입해 디자이너와 **비동기 커뮤니케이션**으로 작업 시간 차이를 극복',
+    ],
+  },
 ];
 
 export const EDUCATION: OtherExperience[] = [
@@ -261,6 +246,20 @@ export const OTHER_EXPERIENCE: OtherExperience[] = [
       {
         url: 'https://techblog.woowahan.com/15660/',
       },
+    ],
+  },
+  {
+    title: 'MDN 문서 오타 수정 기여',
+    organization: 'MDN',
+    date: '2022 10',
+    description: ['MDN kr 문서 오타 수정 기여했습니다.'],
+  },
+  {
+    title: '청소년 코딩 멘토링 활동',
+    organization: '스마일게이트',
+    date: '2021 08 - 2022 03',
+    description: [
+      '지역 아동센터에서 마이크로비트를 활용한 코딩 멘토로 활동하며, 12명의 아이들과 매주 2시간씩 수업을 진행했습니다. 아이들이 흥미를 느끼고 몰입할 수 있는 프로젝트형 수업을 진행했습니다.',
     ],
   },
 ];

@@ -14,7 +14,8 @@ export const Intro = () => {
         <div className='flex flex-wrap items-center gap-3'>
           <p className='text-2xl font-bold'>박진아</p>
           <p className='text-xl'>
-            협업과 효율적인 코드로 사용자 경험을 개선하는 프론트엔드 개발자
+            프론트엔드 경험을 바탕으로 품질을 우선시하는 QA엔지니어로
+            성장하겠습니다.
           </p>
         </div>
 
