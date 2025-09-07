@@ -9,26 +9,20 @@ import { Section } from './Section';
 export const OtherExperience = () => {
   return (
     <Section title='Other Experience'>
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-8 font-body'>
         {OTHER_EXPERIENCE.map(
           ({ title, organization, date, description, link }) => (
             <div key={title}>
               {/* 활동명 */}
               <div className='flex items-center gap-2 flex-wrap'>
-                <p className='text-base font-bold text-midnight-900'>{title}</p>
-                {organization && (
-                  <p className='text-base text-midnight-900'>
-                    — {organization}
-                  </p>
-                )}
+                <p className=''>{title}</p>
+                {organization && <p className=''>— {organization}</p>}
               </div>
               {/* 활동 기간 */}
-              <p className='flex items-center gap-1 mt-2 text-base leading-5 font-ubuntu'>
+              <p className='flex items-center gap-1 mt-2 leading-5 font-ubuntu'>
                 <CalendarIcon width={16} height={16} />
                 {date}
               </p>
-              {/* 설명 */}
-              <p className='mt-1 text-base'>{description}</p>
               {/* 링크 */}
               {link &&
                 link.length > 0 &&
@@ -38,13 +32,15 @@ export const OtherExperience = () => {
                     href={url}
                     target='_blank'
                     rel='noreferrer'
-                    className='flex items-center gap-[2px] mt-1 text-base
+                    className='flex items-center gap-[2px] mt-1 text-blue-600
                     '
                   >
                     <LinkIcon width={14} height={14} />
                     <span className='truncate'>{url}</span>
                   </a>
                 ))}
+              {/* 설명 */}
+              <p className='mt-1'>{description}</p>
             </div>
           )
         )}

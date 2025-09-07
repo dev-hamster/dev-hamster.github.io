@@ -9,8 +9,8 @@ import { Project as TProject } from 'types/resume';
 
 const ListItem = ({ text }: { text: string }) => {
   return (
-    <div className='flex gap-2 text-base'>
-      <div className='w-2 min-w-2 min-h-2 h-2 mt-2 rounded-sm bg-midnight-200 ' />
+    <div className='flex gap-2 '>
+      <span>-</span>
       <Markdown>{text}</Markdown>
     </div>
   );
@@ -32,35 +32,18 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
           techStack,
           team,
         }) => (
-          <div key={title}>
+          <div key={title} className='font-body'>
             {/* 프로젝트명, 날짜 */}
             <div>
               <div className='flex items-center flex-wrap gap-2'>
-                <p className='text-base font-bold text-midnight-900'>{title}</p>
-                {titleCaption && (
-                  <p className='text-base text-midnight-900'>
-                    — {titleCaption}
-                  </p>
-                )}
+                <p className='font-bold'>{title}</p>
+                {titleCaption && <p className=''>— {titleCaption}</p>}
               </div>
-              <p className='flex items-center gap-1 mt-2 text-base leading-5 font-ubuntu'>
+              <p className='flex items-center gap-1 mt-2 leading-5 font-ubuntu'>
                 <CalendarIcon width={16} height={16} />
                 {date}
               </p>
             </div>
-            {/* 기술 스택 */}
-            {techStack && techStack.length > 0 && (
-              <div className='flex flex-wrap gap-2 mt-2 font-ubuntu'>
-                {techStack.map((tech, idx) => (
-                  <p
-                    key={idx}
-                    className='pl-1 pr-1 pt-[1px] pb-[1px] w-fit bg-gray-300 rounded-sm text-sm text-midnight-500'
-                  >
-                    {tech}
-                  </p>
-                ))}
-              </div>
-            )}
             {/* 링크 */}
             {link && link.length > 0 && (
               <>
@@ -70,7 +53,7 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
                     href={url}
                     target='_blank'
                     rel='noreferrer'
-                    className='flex items-center gap-1 mt-2 text-sm'
+                    className='flex items-center gap-1 mt-2 text-blue-600'
                   >
                     {icon === 'github' ? (
                       <div className='mt-1'>
@@ -84,7 +67,12 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
                 ))}
               </>
             )}
-
+            {/* 기술 스택 */}
+            {techStack && techStack.length > 0 && (
+              <div className='flex flex-wrap gap-2 mt-2 font-ubuntu'>
+                <ListItem text={`기술스택: ${techStack.join(', ')}`}></ListItem>
+              </div>
+            )}
             <div className='flex flex-col gap-1 mt-2'>
               {/* 조직명 */}
               {organization && <ListItem text={`근무처: ${organization}`} />}

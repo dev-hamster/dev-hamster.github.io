@@ -4,12 +4,20 @@ module.exports = {
     `./src/pages/**/*.{js,jsx,ts,tsx}`,
     `./src/components/**/*.{js,jsx,ts,tsx}`,
     `./src/content/**/*.mdx`,
+    `./src/constants/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
     extend: {
       fontFamily: {
         noto: ['Noto Sans KR', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         ubuntu: ['Ubuntu', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        body: ['Noto Sans KR', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'body-bold': [
+          'Noto Sans KR',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ],
       },
       colors: {
         midnight: {
