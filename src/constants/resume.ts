@@ -112,12 +112,15 @@ export const PROJECT: Project[] = [
       },
     ],
     techStack:
-      'Next.js, TypeScript, Redux, React Query, Styled-Components'.split(','),
+      'Jest, Next.js, TypeScript, Redux, React Query, Styled-Components'.split(
+        ','
+      ),
     team: 'FE 2명, BE 2명, 디자이너 1명',
     intro:
       '북마크 링크를 공유하는 SNS로,  PO로서 칸반보드 로 프로젝트를 관리했습니다.',
     contribution: 30,
     description: [
+      '<span class="highlight">Jest 기반 폼 유닛 테스트 학습 및 적용</span>: 프로젝트 이후, 폼 입력 로직의 결함을 사전에 예방하기 위해 Jest로 유닛 테스트를 작성, API 요청은 MSW(Mock Service Worker)로 모킹하여 네트워크 의존성을 제거하고 안정적인 테스트 환경을 구축 [관련 블로그 글](https://dev-hamster.github.io/Jest%EC%97%90%EC%84%A0%20%EC%84%B1%EA%B3%B5%EC%9D%B8%EB%8D%B0%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%97%90%EC%84%A0%20%EC%8B%A4%ED%8C%A8/)',
       'API 성능 최적화: 중복 API 호출을 줄이기 위해  React Query의 서버 데이터 캐싱 을 적용,  API 호출량 50% 절감 ',
       'UX 개선: ‘좋아요’ 피드백을 즉시 반영하기 위해  낙관적 업데이트 도입 (600ms → 0ms)  으로  사용자 경험 향상 ',
       '코드 구조 개선:  Redux 의존성 제거  및  useToast 커스텀 훅 도입 으로  컴포넌트 복잡성 감소 ',

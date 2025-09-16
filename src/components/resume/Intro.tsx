@@ -36,8 +36,8 @@ export const Intro = () => {
             <p className='flex gap-1 items-center'>
               <span>GitHub</span>
             </p>
-            <Link url='https://dev-hamster.github.io'>
-              https://dev-hamster.github.io
+            <Link url='https://github.com/dev-hamster'>
+              https://github.com/dev-hamster
             </Link>
           </div>
           <div>

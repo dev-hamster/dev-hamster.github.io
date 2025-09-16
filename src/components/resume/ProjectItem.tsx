@@ -5,13 +5,31 @@ import GithubIcon from 'assets/ico-github.svg';
 import LinkIcon from 'assets/ico-link.svg';
 
 import Markdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import { Project as TProject } from 'types/resume';
+
+const sanitizeSchema = {
+  ...defaultSchema,
+  tagNames: [...(defaultSchema.tagNames || []), 'span'],
+  attributes: {
+    ...(defaultSchema.attributes || {}),
+    span: [
+      ...((defaultSchema.attributes || {}).span || []),
+      'className',
+      'class',
+      'style',
+    ],
+  },
+};
 
 const ListItem = ({ text }: { text: string }) => {
   return (
     <div className='flex gap-2 '>
       <span>-</span>
-      <Markdown>{text}</Markdown>
+      <Markdown rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}>
+        {text}
+      </Markdown>
     </div>
   );
 };

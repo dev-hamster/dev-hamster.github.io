@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   CertificatesAndAwards,
@@ -9,11 +9,13 @@ import {
   Project,
   SkillsAndTools,
   WorkExperience,
-} from "components/resume/index";
+} from 'components/resume/index';
+
+import '../styles/resume.css';
 
 const ResumePage = () => {
   return (
-    <div className="font-noto">
+    <div className='font-noto resume-page'>
       <Intro />
       <SkillsAndTools />
       <WorkExperience />
