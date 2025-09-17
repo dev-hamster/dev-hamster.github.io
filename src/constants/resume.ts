@@ -50,6 +50,16 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
         ],
       },
       {
+        title: '검수 범위 외 정책 리스크 식별',
+        date: '2025.09',
+        intro:
+          '담당 범위 밖의 리스크까지 능동적으로 탐지하여 서비스 안정성에 기여',
+        description: [
+          '애드몹 광고 정책 위반 사례를 발견하여, <span class="highlight">계정 차단 가능성을 사전에 예방</span>하고 안정적인 운영에 기여',
+          '정책/기능 검수 범위를 넘어 정책 리스크까지 식별, 팀 내 QA의 리스크 관리 역량 강화',
+        ],
+      },
+      {
         title: '미니앱 검수 워크플로우 자동화',
         date: '2025.07',
         intro:
