@@ -22,13 +22,19 @@ const IndexPage = ({ data }: IndexPageProps) => {
     <main>
       <Header />
       <Layout>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-4'>
+        <div className='grid grid-cols-1 gap-x-2 gap-y-4'>
           {posts.map((post) => (
-            <Link key={post.id} to={post.frontmatter.slug}>
+            <Link
+              key={post.id}
+              to={post.frontmatter.slug}
+              style={{
+                textDecoration: 'none',
+              }}
+            >
               <Card
                 thumbnail={post.frontmatter.thumbnail}
                 title={post.frontmatter.title}
-                body={removeMarkdown(post.body)}
+                {...post}
               />
             </Link>
           ))}

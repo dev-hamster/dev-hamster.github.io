@@ -12,18 +12,26 @@ export const Card = ({ title, body, thumbnail }: CardProps) => {
   const src = thumbnail ? getImage(thumbnail) : '';
 
   return (
-    <div className='flex flex-col gap-[14px] w-full min-w-[210px] h-[323px] pt-4 pl-[14px] pr-[14px] rounded-xl border border-black bg-white'>
-      {src && (
-        <GatsbyImage
-          className='self-center min-w-[192px] w-full h-[145px] rounded-xl'
-          image={src}
-          alt={title}
-        />
-      )}
-      <p className='h-[55px] text font-semibold text-pretty line-clamp-2'>
-        {title}
-      </p>
-      <div className='w-full line-clamp-3 text-pretty' style={summaryStyle}>
+    <div
+      className='flex flex-col gap-[14px] w-full min-w-[210px] pt-4 pb-8 border-b-2 
+    bg-white'
+    >
+      <div className='flex justify-between'>
+        <p className='text font-semibold text-pretty line-clamp-2 font-body'>
+          {title}
+        </p>
+        {src && (
+          <GatsbyImage
+            className='min-w-20 w-20 h-[53px] rounded-md'
+            image={src}
+            alt={title}
+          />
+        )}
+      </div>
+      <div
+        className='w-full line-clamp-2 text-pretty leading-6'
+        style={summaryStyle}
+      >
         {body}
       </div>
     </div>
