@@ -4,7 +4,7 @@ const path = require('path');
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `blog`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://dev-hamster.github.io`,
   },
   graphqlTypegen: true,
   plugins: [
