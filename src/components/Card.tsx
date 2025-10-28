@@ -1,6 +1,7 @@
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React, { CSSProperties } from 'react';
 import { CardProps } from 'types/post';
+import { extractTextFromMDX } from '../utils';
 
 const summaryStyle: CSSProperties = {
   fontSize: '14px',
@@ -10,6 +11,7 @@ const summaryStyle: CSSProperties = {
 
 export const Card = ({ title, body, thumbnail }: CardProps) => {
   const src = thumbnail ? getImage(thumbnail) : '';
+  const cleanBody = extractTextFromMDX(body);
 
   return (
     <div
@@ -32,7 +34,7 @@ export const Card = ({ title, body, thumbnail }: CardProps) => {
         className='w-full line-clamp-2 text-pretty leading-6'
         style={summaryStyle}
       >
-        {body}
+        {cleanBody}
       </div>
     </div>
   );
