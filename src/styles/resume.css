@@ -1,3 +1,115 @@
 .resume-page a {
   @apply text-blue-600;
 }
+
+/* 1) 기본 용지/여백/폰트 */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 14mm 16mm; /* 상/좌우/하 */
+  }
+
+  html,
+  body {
+    font-family: system-ui, -apple-system, 'Noto Sans KR', 'Apple SD Gothic Neo',
+      Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.45;
+    color: #000;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 2) 화면 전용 UI 숨기기 */
+  .navbar,
+  .footer,
+  .toc,
+  .btn,
+  .tag,
+  .chip,
+  .share,
+  .anchor,
+  .screen-only {
+    display: none !important;
+  }
+
+  /* 3) 링크: 실제 URL 노출 혹은 제거(택1) */
+  /* (A) URL을 함께 출력하고 싶다면: */
+  a[href^='http']:not(.nolink):after {
+    content: '';
+    font-weight: normal;
+  }
+  /* (B) 또는 URL 꼬리표를 숨기고 텍스트만 남기려면 위 규칙 주석 처리 */
+
+  /* 4) 컬러 최소화 & 굵기로 강조 */
+  h1,
+  h2,
+  h3 {
+    color: #000;
+    font-weight: 700;
+    margin: 0 0 6pt;
+  }
+  h1 {
+    font-size: 16pt;
+  }
+  h2 {
+    font-size: 13pt;
+  }
+  h3 {
+    font-size: 11.5pt;
+  }
+  .muted {
+    color: #000;
+    opacity: 0.8;
+  }
+  strong,
+  .kpi {
+    font-weight: 800;
+  }
+
+  /* 5) 항목 단위로 잘리지 않게 */
+  .section,
+  .experience,
+  .experience-item,
+  .project,
+  .education,
+  .list-block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 10pt;
+  }
+
+  /* 6) 목록 들여쓰기/간격 */
+  ul,
+  ol {
+    margin: 4pt 0 8pt 14pt;
+    padding: 0;
+  }
+  li {
+    margin: 2pt 0;
+  }
+
+  /* 7) 좌우 컬럼을 한 컬럼으로(있다면) */
+  .two-column {
+    column-count: 1 !important;
+  }
+
+  /* 8) 표가 있다면 테두리 단순화 */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 10.5pt;
+  }
+  th,
+  td {
+    border: 1px solid #000;
+    padding: 4pt 6pt;
+  }
+}
+
+/* 화면에서는 URL 꼬리표 숨기기 */
+@media screen {
+  a[href^='http']:after {
+    content: none;
+  }
+}
