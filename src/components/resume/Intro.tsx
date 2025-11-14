@@ -7,11 +7,16 @@ export const Intro = () => {
     <div className='mt-16 max-w-[768px] m-auto'>
       <div className='mt-16 ml-6 mr-6'>
         <div className='flex flex-wrap items-center gap-3'>
-          <p className='font-title font-bold text-pretty whitespace-pre-line'>
+          <p className='text-[32px] font-bold text-pretty whitespace-pre-line'>
             {TITLE}
           </p>
         </div>
 
+        <Paragraph>
+          <span className='highlight'>
+            품질을 높이는 과정을 즐기며, 더 효율적인 방법을 고민합니다.
+          </span>
+        </Paragraph>
         {INTRO.map((content, idx) => (
           <Paragraph key={idx}>{content}</Paragraph>
         ))}

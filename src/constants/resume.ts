@@ -3,8 +3,6 @@ import { OtherExperience, Project, WorkExperience } from 'types/resume';
 export const TITLE = '박진아';
 
 export const INTRO = `
-  품질을 높이는 과정을 즐기며, 더 효율적인 방법을 고민합니다.
-
   - 결함을 예방하는 과정에 흥미를 느껴 프론트엔드 개발자에서 QA로 전환했습니다. 
   - JavaScript, Python으로 반복 업무를 자동화해 QA 생산성을 향상시킨 경험이 있습니다. 
   - 빠른 릴리즈 환경에서 테스트를 수행하며, 정책 기반 탐색적 테스트로 고위험 리스크를 조기 발견했습니다.
