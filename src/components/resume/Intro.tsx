@@ -1,11 +1,6 @@
 import React from 'react';
-import Markdown from 'react-markdown';
 
-import EarthIcon from 'assets/ico-earth.svg';
-import EmailIcon from 'assets/ico-email.svg';
-import GithubIcon from 'assets/ico-github.svg';
-
-import { INTRO } from 'constants/resume';
+import { INTRO, TITLE } from 'constants/resume';
 
 export const Intro = () => {
   return (
@@ -13,14 +8,12 @@ export const Intro = () => {
       <div className='mt-16 ml-6 mr-6'>
         <div className='flex flex-wrap items-center gap-3'>
           <p className='font-title font-bold text-pretty whitespace-pre-line'>
-            품질을 높이는 활동이라면 무엇이든 즐겁게 하는 <br /> 박진아 입니다.
+            {TITLE}
           </p>
         </div>
 
         {INTRO.map((content, idx) => (
-          <Paragraph key={idx}>
-            <Markdown>{content}</Markdown>
-          </Paragraph>
+          <Paragraph key={idx}>{content}</Paragraph>
         ))}
 
         <div className='mt-5 flex flex-col gap-[12px] font-body'>

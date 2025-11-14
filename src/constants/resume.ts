@@ -1,10 +1,18 @@
 import { OtherExperience, Project, WorkExperience } from 'types/resume';
 
-export const INTRO =
-  `결함을 ‘수정’보다 ‘예방’하는 과정에 더 큰 흥미를 느껴 프론트엔드 개발자에서 QA로 전환했습니다. 반복적인 QA 과정을 자동화하고, 데이터를 통해 품질을 정량적으로 개선하는 일을 즐깁니다. 단순한 검수를 넘어, 서비스 전반의 리스크를 조기에 차단하는 QA를 지향합니다.`
-    .split('\n')
-    .map((x) => x.trim())
-    .filter((x) => x);
+export const TITLE = '박진아';
+
+export const INTRO = `
+  품질을 높이는 과정을 즐기며, 더 효율적인 방법을 고민합니다.
+
+  - 결함을 예방하는 과정에 흥미를 느껴 프론트엔드 개발자에서 QA로 전환했습니다. 
+  - JavaScript, Python으로 반복 업무를 자동화해 QA 생산성을 향상시킨 경험이 있습니다. 
+  - 빠른 릴리즈 환경에서 테스트를 수행하며, 정책 기반 탐색적 테스트로 고위험 리스크를 조기 발견했습니다.
+  - 필요한 도구를 직접 만들어 팀 전체의 품질을 높이는 QA 엔지니어를 지향합니다.
+  `
+  .split('\n')
+  .map((x) => x.trim())
+  .filter((x) => x);
 
 export const SKILLS_AND_TOOLS = [
   {
@@ -56,8 +64,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
           '불필요한 반려로 인해 미니앱 출시 속도가 지연되는 문제를 해결하기 위해, 데이터 기반으로 QA 기준을 재정립',
         description: [
           '반려율이 50%를 상회해 출시 병목이 발생해 품질을 유지하면서도 현실적인 QA 기준을 재정립하고 승인율 개선을 추진.',
-          '주간 검수 데이터를 Looker Studio로 집계·시각화하여 반려 유형을 분석한 결과, <span class="highlight">비핵심 결함(P2·P3)의 비중이 높음을 확인</span>',
-          '<span class="highlight">AS-IS / TO-BE 프로세스를 재설계</span>하여, 비핵심 결함은 백로그로 관리하고 고위험 결함만 즉시 반려하도록 개선',
+          '주간 검수 데이터를 Looker Studio로 집계·시각화하여 반려 유형을 분석한 결과, 비핵심 결함(P2·P3)의 비중이 높음을 확인',
+          'AS-IS / TO-BE 프로세스를 재설계하여, 비핵심 결함은 백로그로 관리하고 고위험 결함만 즉시 반려하도록 개선',
           '<span class="highlight">승인율이 56% → 64%로 개선</span>되었으며, 출시 속도가 향상되고 반려 사유의 일관성이 확보됨',
         ],
       },
@@ -68,7 +76,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
           '정책 위반·운영 리스크와 같은 고위험 영역을 대상으로 탐색적 테스트를 수행하여 사전 차단',
         description: [
           '<span class="highlight">탐색적 테스트를 통해 AdMob 광고 정책 위반 사례 2건(발견률 약 2.2%)을 발견</span>하여 Google 계정 차단 및 광고 수익 손실 리스크를 예방',
-          '<span class="highlight">약 1000건 중 1건 수준으로 드문 프로모션 구조 이상 케이스를 조기 발견</span>해 운영 리스크를 사전 방지',
+          '약 1000건 중 1건 수준으로 드문 프로모션 구조 이상 케이스를 조기 발견해 운영 리스크를 사전 방지',
         ],
       },
       {
