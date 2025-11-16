@@ -15,169 +15,15 @@
 <p>크롬 성능 측정을 이용해 드래그 이벤트를 발생시킨 후, 드래그가 본격적으로 발생한 약 4초 동안의 구간을 확인해 보았다.</p>
 <p>개선 전, 개선 후의 요약 탭을 확인해보면 렌더링은 38ms에서 24ms 로 단축되고 페인팅은 41ms에서 24ms로 로 개선됐다.</p>
 <p>개선 전:
-<span><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
-    >
-      <a
-    class="gatsby-resp-image-link"
-    href="/static/24e0e03cc6c9a51c25b4b56c33b592f0/e8950/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 40.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABO0lEQVR42nVRy5KCMBD0X1wCyhvkoYkIWAlBrNKqdYvLHrb2//+hN5MqvawcOkOYmZ7uzKptWxBOpxb7vYBSCnVdw3EcbDYbExmY+f5wPDjMBWMOXNeF53lvsQqCAEEYoWs45i+JJMvhb7evgjiOEcUpyh1DmrjmniIMw0XSFR1CNJD9Eb8/VzRdbwmfDZfLCDVO+J6OuMkj9OWKsiyNUmYd/CMsigLDMKAwRbtdaS0fDodXA+W0lmiaO6S8YxyHRbuWkKZN02QKRwNtI+fcEpLK8/mMUY0odAWuBLTSdtCiZXrDvu9BStM0tQQUaSn0fqRYDQqi5uB7bhWXRblMSIkoioylxm6byOgfoes6zPOMx+cDSZJAKmkdZFm2bJkOaiZFZJPwTFZVZQcJIeD7vr3neY71ev12IUT4B2fg/f52tYm3AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="개선전"
-        title=""
-        src="/static/24e0e03cc6c9a51c25b4b56c33b592f0/c1b63/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB.png"
-        srcset="/static/24e0e03cc6c9a51c25b4b56c33b592f0/5a46d/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB.png 300w,
-/static/24e0e03cc6c9a51c25b4b56c33b592f0/0a47e/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB.png 600w,
-/static/24e0e03cc6c9a51c25b4b56c33b592f0/c1b63/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB.png 1200w,
-/static/24e0e03cc6c9a51c25b4b56c33b592f0/d61c2/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB.png 1800w,
-/static/24e0e03cc6c9a51c25b4b56c33b592f0/e8950/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB.png 2000w"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-  </a>
-    </span></span></p>
+<img src="./%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB.png" alt="개선전"/></p>
 <br/>
-<p>개선 후: <span><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
-    >
-      <a
-    class="gatsby-resp-image-link"
-    href="/static/638571f0e27c8aa7425d22ccab2aa6f5/e40ed/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 33.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA8UlEQVR42o1Qy1LDMBDLn5QCiU2J26RuSxyTR2Mb7JThwjDA/3+IsPfEieagmR3trFZSJhsF2eiIFtXxhHXBIjhu8gKre4ZVnuac+FvGryLjW4mvzx6XdxeJDR3yUqB+0mh1BaU4zVyIRaLZ89liODew3kEqTW642MKEAGtnePuGyXsUj+UyQRdmqGFCN1n0xtIRiw5fwgWNMzi9GozGYb0gLgl2k0HqUY8jDqqNveUo6z1sfNQOkYu7wTqIvaRer3cY3SSh3eFIRHJofMDH9w+arqed8TNFXuQwRUmfk9AdfyCw2OGmqkkkIVXwd/8ffgHg2dZqBCW50gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="개선후"
-        title=""
-        src="/static/638571f0e27c8aa7425d22ccab2aa6f5/c1b63/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE.png"
-        srcset="/static/638571f0e27c8aa7425d22ccab2aa6f5/5a46d/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE.png 300w,
-/static/638571f0e27c8aa7425d22ccab2aa6f5/0a47e/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE.png 600w,
-/static/638571f0e27c8aa7425d22ccab2aa6f5/c1b63/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE.png 1200w,
-/static/638571f0e27c8aa7425d22ccab2aa6f5/e40ed/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE.png 1378w"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-  </a>
-    </span></span></p>
+<p>개선 후: <img src="./%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE.png" alt="개선후"/></p>
 <p>다음 사진은 드래그가 발생하는 동안 실행된 작업들이다. 여기서 하나를 확대해보자.
-<span><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 612px; "
-    >
-      <a
-    class="gatsby-resp-image-link"
-    href="/static/54d151e82ce9e373e8241fc302e68c8d/8c76f/%E1%84%83%E1%85%B3%E1%84%85%E1%85%A2%E1%84%80%E1%85%B3-%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB-%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%83%E1%85%B3%E1%86%AF.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 53.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAACBElEQVR42mWSyZLaQBBE+QAI++ibL3aAMYMWJCHBsA6LRgItLAqzBPvm//+AdHYDhrEPFd1SVb3KVClVakQwmhG0egSdodVCGI0YOt+LUF4D+V6E0Ywh6xvXu6yph+wN8VVz8eVnFym948Nsxcg5MxYnMNoDmO0ItX4Eux/guxPhpTGGUg/gtH7htR+i2hvC6Exg9zisHfAeIV0YIq14SKm9BEpnDt3bQu0uUWglyDcTWO4M1mCGYm+Bwtsc2doUSpd1vTmKrREhW5jeCqo/Z/0UmYKPT3kCy/EBxnCPcnRAZXyGHR3l3WLUkgs0bwMj2KHYX8OOjzCDA2OH6viC6vSCyuTM5z3SWQ+f8wOkSoMdzPAgIdXRb3nq/pbnEdXJCcr7WkLVdyoaXGEC7IxOzJ9R8vfMb5+BWznBktAjzz1Ul8DwRMVXoCqBG1isE7U2h96BiruWNZnck0JhuSRUxVe7wp4zPt0Ubm4KN1R2BZX/AYpcJuc/FArZ+gfg6tbwUCjAdiisHh/A6U2h+0HhljapkkotWjZpWSoUDVySAN2B5eD0pJBw5kXtfwqdaAVzuINGaFFYcFeoiAYqemGD7okmDqHlyujAb7iXw5x4hzx/KZVLydyXIqxq7oJNGzkt25pJy3bEZQ3X+PG2hNJf3pbC4QQaA6odLjh4jm+1hLnV3y3/ATl2kKVAEy28AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="드래그시 실행 중인 작업"
-        title=""
-        src="/static/54d151e82ce9e373e8241fc302e68c8d/8c76f/%E1%84%83%E1%85%B3%E1%84%85%E1%85%A2%E1%84%80%E1%85%B3-%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB-%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%83%E1%85%B3%E1%86%AF.png"
-        srcset="/static/54d151e82ce9e373e8241fc302e68c8d/5a46d/%E1%84%83%E1%85%B3%E1%84%85%E1%85%A2%E1%84%80%E1%85%B3-%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB-%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%83%E1%85%B3%E1%86%AF.png 300w,
-/static/54d151e82ce9e373e8241fc302e68c8d/0a47e/%E1%84%83%E1%85%B3%E1%84%85%E1%85%A2%E1%84%80%E1%85%B3-%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB-%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%83%E1%85%B3%E1%86%AF.png 600w,
-/static/54d151e82ce9e373e8241fc302e68c8d/8c76f/%E1%84%83%E1%85%B3%E1%84%85%E1%85%A2%E1%84%80%E1%85%B3-%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB-%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%83%E1%85%B3%E1%86%AF.png 612w"
-        sizes="(max-width: 612px) 100vw, 612px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-  </a>
-    </span></span></p>
+<img src="./%E1%84%83%E1%85%B3%E1%84%85%E1%85%A2%E1%84%80%E1%85%B3-%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB-%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%83%E1%85%B3%E1%86%AF.png" alt="드래그시 실행 중인 작업"/></p>
 <p>mousemove가 드래그 이벤트가 발생한 시점이다. 개선 전 작업을 보면 레이아웃과 페인트 작업을 볼 수 있다.
-<span><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
-    >
-      <a
-    class="gatsby-resp-image-link"
-    href="/static/8c3798fadb4b7044e7a01b9d3032ebf9/f6b04/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 9%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAmUlEQVR42mPoqHX6P7HZ4f/SiVb/5/c6/4/yb/ifGNTxPy6w9X+Yb81/R9fM/8nBHf+DfKr+69qF/rd2Tv6vZxf239wp7r++bfh/y6jo/9b5Mf+tc4A4L/Y/g5Se/X95I7v/WpY2/zUsHf6zK3j/54Bidnmv/8xy7v85FXz+s8l7/meUc/3PJOf2n0HWBUErAsVUIJhRxe0/AGV9Rk35kGvEAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="개선 전 작업"
-        title=""
-        src="/static/8c3798fadb4b7044e7a01b9d3032ebf9/c1b63/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png"
-        srcset="/static/8c3798fadb4b7044e7a01b9d3032ebf9/5a46d/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 300w,
-/static/8c3798fadb4b7044e7a01b9d3032ebf9/0a47e/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 600w,
-/static/8c3798fadb4b7044e7a01b9d3032ebf9/c1b63/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 1200w,
-/static/8c3798fadb4b7044e7a01b9d3032ebf9/d61c2/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 1800w,
-/static/8c3798fadb4b7044e7a01b9d3032ebf9/97a96/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 2400w,
-/static/8c3798fadb4b7044e7a01b9d3032ebf9/f6b04/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 2658w"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-  </a>
-    </span></span></p>
+<img src="./%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png" alt="개선 전 작업"/></p>
 <p>반면에 개선 후 작업에서는 페인트 단계만 볼 수 있다.
-<span><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
-    >
-      <a
-    class="gatsby-resp-image-link"
-    href="/static/0cb1120870c06815427e6abb764266a0/efe17/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 33.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABM0lEQVR42q2QP0tCYRSHX/9eacg10KteTQqhwQbvkETpffVmf1FJXNSpGtyCiIKIBimHoiDIxSGirS2otr5AH6AP0Od4eu9NaI1qeDiHH5znvO8RuYUOOWud470CN6cmB90Wq/KIjcouRWuHmbk62eImZqeBud1gvtWmUu2SbTco1ytcnDW5v92i12sTTkuEiEqCSUl0VjKdl+SrHcREmZCxjD9u49ElnpjEmyrhnSzjT9kEDNvtffEiJ4M+bx8vDB6H+BMlRNCQjKVtxjNriKiNllpSAxZO7qApkZZUGIrEV3XykKHkatHh9Tmv789KeKdyV1gipLaGMysEEtINf4KWVMK4ZP+yr4RPXD0M1fxI+Bu0UY3kakwtNtHN2vcL/4JXtxCRAr6Y9T9C977q+w6O8BPoV+KdFhtPYgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="개선 후 작업"
-        title=""
-        src="/static/0cb1120870c06815427e6abb764266a0/c1b63/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png"
-        srcset="/static/0cb1120870c06815427e6abb764266a0/5a46d/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 300w,
-/static/0cb1120870c06815427e6abb764266a0/0a47e/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 600w,
-/static/0cb1120870c06815427e6abb764266a0/c1b63/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 1200w,
-/static/0cb1120870c06815427e6abb764266a0/d61c2/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 1800w,
-/static/0cb1120870c06815427e6abb764266a0/97a96/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 2400w,
-/static/0cb1120870c06815427e6abb764266a0/efe17/%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png 2860w"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-  </a>
-    </span></span></p>
+<img src="./%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%92%E1%85%AE%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8.png" alt="개선 후 작업"/></p>
 <p>왜 transform 은 레이아웃 작업이 없을까? 브라우저 렌더링 과정에서 알아보자.</p>
 <h2>Layout, Reflow, Paint, Repaint</h2>
 <p>브라우저 렌더링 과정에은 Style, Layout, Paint, 때때로 Compositing이 포함된다. 오늘은 Layout부터 Repaint까지 알아보자.</p>
@@ -191,67 +37,9 @@
 <p>첫 페인트 이후 UI변경으로 시각적 업데이트를 표시하기 위해 다시 그릴 때 발생한다. 일반적으로 리플로우 이후에 발생한다.</p>
 <p>css 속성별로 렌더링을 발생시키는 작업이 있다. 각 속성이 어떤 렌더링 과정을 일으키는지는 <a href="https://lab.skk.moe/css-triggers%EC%97%90%EC%84%9C">https://lab.skk.moe/css-triggers</a>에서 확인할 수 있다.</p>
 <p>처음으로 구현했던 방법은 left와 top속성을 직접 업데이트하는 것이었는데, Layout을 발생시키는 요소를 확인할 수 있다.
-<span><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1072px; "
-    >
-      <a
-    class="gatsby-resp-image-link"
-    href="/static/2be67b3481fa1e0d621c7fce1536e610/d5bfb/left-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 19.666666666666668%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAnklEQVR42pVO2w7CIBTj/39QNxVwDoMEdC5yWwYV8PKsTZqTNm1zyHxPuJobpJRIKWG2GkpdME0TKs6KQ2sNIUTxVctUOOcQQoD3HtbarybrCsRlgS8i5YxljQgxNC+Xoo8lGCNcKYZ3pvoplZs/xMsvJNY+2sCvqKWKYRTYUYo94+jbZTjwI4gxpr387+AoGehpAzZ2oMMW7NSBjz2ep/M2Da75O08AAAAASUVORK5CYII='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="left 트리거"
-        title=""
-        src="/static/2be67b3481fa1e0d621c7fce1536e610/d5bfb/left-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png"
-        srcset="/static/2be67b3481fa1e0d621c7fce1536e610/5a46d/left-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png 300w,
-/static/2be67b3481fa1e0d621c7fce1536e610/0a47e/left-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png 600w,
-/static/2be67b3481fa1e0d621c7fce1536e610/d5bfb/left-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png 1072w"
-        sizes="(max-width: 1072px) 100vw, 1072px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-  </a>
-    </span></span></p>
+<img src="./left-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png" alt="left 트리거"/></p>
 <p>반대로 transform은 Composite만 발생시킨다. (Blink, 크롬기준)
-<span><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1072px; "
-    >
-      <a
-    class="gatsby-resp-image-link"
-    href="/static/7f321f024811e8a8b348cada4e307814/d5bfb/transform-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 21%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAsklEQVR42o2QC27CMBBEc/8TVkgFQuISYyAR2MGf2I+1ewAYabXfGY22czYz3y3nsyKEiPMLFzNxu92pmEyPuRrGUaG1Jufc5uu6yn3Ae49zVmrf+m6TfUqZGCOlFFJOhBiIKVGE6MOr7V5CDJKz3NT5JsQqvuWakSit7qrqsizM8yzCiW/hVsfTPnnYB4fTwO+x509f6KplY0yL6uQT/v3JK64Datqj9J5e7TiMP/KegTfndTbUE61+MQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="transform 트리거"
-        title=""
-        src="/static/7f321f024811e8a8b348cada4e307814/d5bfb/transform-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png"
-        srcset="/static/7f321f024811e8a8b348cada4e307814/5a46d/transform-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png 300w,
-/static/7f321f024811e8a8b348cada4e307814/0a47e/transform-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png 600w,
-/static/7f321f024811e8a8b348cada4e307814/d5bfb/transform-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png 1072w"
-        sizes="(max-width: 1072px) 100vw, 1072px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-  </a>
-    </span></span></p>
+<img src="./transform-%E1%84%90%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A5.png" alt="transform 트리 거"/></p>
 <p>여기까지 transform이 실제로 Reflow작업을 방지해 성능을 개선한 것을 눈으로 알아봤다.</p>
 <h2><code>transform</code>은 어떻게 처리될까?</h2>
 <p><code>transform</code>은 합성 단계에서 처리된다. 합성 단계는 메인 쓰레드가 아닌, GPU를 이용해 레이어를 합성해 정확하게 화면에 그린다. 레이어는 video, canvas, 3d 또는 원근 변화 css 속성 등 사용시 생성된다.</p>
@@ -269,6 +57,6 @@
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-b742dab2ced2ad40e6e6.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-69b29e4925ee113b91b2.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-fac95ad1ce41eed2cd5d.js\"],\"component---src-pages-resume-tsx\":[\"/component---src-pages-resume-tsx-1f8a0c24d941209321e1.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-fsd-적용-후기-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-fsd-적용-후기-index-mdx-07459382b66aa2ab2308.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-jest에선-성공인데-브라우저에선-실패-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-jest에선-성공인데-브라우저에선-실패-index-mdx-94e88c1ed92aa47bbd76.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-qa에서-자주-쓰이는-테스트-종류-정리-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-qa에서-자주-쓰이는-테스트-종류-정리-index-mdx-974cb5aea3b8b5527aa6.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-qa의-세계로-istqb-취득-하기-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-qa의-세계로-istqb-취득-하기-index-mdx-292e4938f999f58fbf75.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-type-challenges-easy-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-type-challenges-easy-index-mdx-edb0922a97a318645c16.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-type-challenges-medium-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-type-challenges-medium-index-mdx-24042c0e905fd5f9b098.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-use-query를-만들어보자-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-use-query를-만들어보자-index-mdx-4d8c6b30caf3dd302d54.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-드래그-이벤트-구현기-1-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-드래그-이벤트-구현기-1-index-mdx-f0edf6226ba43f699f27.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-드래그-이벤트-구현기-2-왜-transform은-더-빠를까-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-드래그-이벤트-구현기-2-왜-transform은-더-빠를까-index-mdx-e62f838406bcb92c0702.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-반응형-퍼블리싱-스터디-회고-🤓-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-반응형-퍼블리싱-스터디-회고-🤓-index-mdx-fc476ca7719abc26d335.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-탐테가원데-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-탐테가원데-index-mdx-4eb82a701a208eb5b998.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-하루종일-걸릴-작업을-한시간만에-완료하기-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-하루종일-걸릴-작업을-한시간만에-완료하기-index-mdx-709971cad3a7cf25f42d.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-9f25255fae5d798e1a39.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-69b29e4925ee113b91b2.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-fac95ad1ce41eed2cd5d.js\"],\"component---src-pages-resume-tsx\":[\"/component---src-pages-resume-tsx-1f8a0c24d941209321e1.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-fsd-적용-후기-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-fsd-적용-후기-index-mdx-7c7f2eb1f7aa6e7bd5bb.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-jest에선-성공인데-브라우저에선-실패-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-jest에선-성공인데-브라우저에선-실패-index-mdx-eee30e66226e65807b12.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-qa에서-자주-쓰이는-테스트-종류-정리-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-qa에서-자주-쓰이는-테스트-종류-정리-index-mdx-ef4e99107c3115911e65.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-qa의-세계로-istqb-취득-하기-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-qa의-세계로-istqb-취득-하기-index-mdx-895c0918dc904d657e94.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-type-challenges-easy-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-type-challenges-easy-index-mdx-18e52fa0a5ff616278b3.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-type-challenges-medium-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-type-challenges-medium-index-mdx-64f191ab0de31cd7553a.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-use-query를-만들어보자-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-use-query를-만들어보자-index-mdx-a323b35f853d27fb9a20.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-드래그-이벤트-구현기-1-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-드래그-이벤트-구현기-1-index-mdx-24d2c3cdc072f281831d.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-드래그-이벤트-구현기-2-왜-transform은-더-빠를까-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-드래그-이벤트-구현기-2-왜-transform은-더-빠를까-index-mdx-78bc7c77b34b03738c21.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-반응형-퍼블리싱-스터디-회고-🤓-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-반응형-퍼블리싱-스터디-회고-🤓-index-mdx-a494152c4ad3eea29f47.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-처음으로-ai와-협업해본-qa-경험-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-처음으로-ai와-협업해본-qa-경험-index-mdx-981eb8acdd1f1f99f77c.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-탐테가원데-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-탐테가원데-index-mdx-ac0f65ebdb22bee230c0.js\"],\"component---src-templates-post-tsx-content-file-path-src-content-하루종일-걸릴-작업을-한시간만에-완료하기-index-mdx\":[\"/component---src-templates-post-tsx-content-file-path-src-content-하루종일-걸릴-작업을-한시간만에-완료하기-index-mdx-17ac81a68b98dc9f33c8.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="a8f4cf332ae55a0950c7";</script><script src="/webpack-runtime-fa8f6e326f52bad8ea7a.js" async></script><script src="/framework-53a942b5d852d3139bb2.js" async></script><script src="/app-b742dab2ced2ad40e6e6.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="36c08038f1b91c7b1332";</script><script src="/webpack-runtime-ab226918a86b2ae5c86b.js" async></script><script src="/framework-53a942b5d852d3139bb2.js" async></script><script src="/app-9f25255fae5d798e1a39.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
