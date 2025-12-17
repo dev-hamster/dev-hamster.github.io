@@ -41,8 +41,20 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     date: '2025.06 - 현재',
     description: [
       '앱인토스 초기 QA 팀에 합류하여, 미니앱 품질 검수 프로세스를 체계화하고 자동화·지표화 기반을 구축했습니다.',
-    ],
+    ],    
     project: [
+      {
+        title: '구버전 공통 SDK 사용 여부 전수 조사 자동화',
+        date: '2025.12 - 현재',
+        intro: 'SDK 버전 판별을 위한 UI 오라클을 정의하고, Page Object 패턴 기반의 안정적인 전수 조사 자동화',
+        techStack: ['Appium', 'WebdriverIO', 'TypeScript', 'Allure Report'],
+        description: [
+          '500+개 미니앱 대상 전수 조사 자동화로 인적 리소스 대폭 절감 (약 8시간 → 약 1시간)',
+          '버전별 차이가 발생하는 특정 UI 요소를 테스트 오라클로 정의하고, 공통 내비게이션 등 SDK 의존도가 높은 영역을 중심으로 검증 시나리오 설계',
+          'Page Object 패턴을 적용하여 테스트 유지보수성을 확보하고, content-desc 기반 selector 및 waitForClickable 대기 전략을 활용해 테스트 안정성 강화',
+          '파트너 빌드 단계에서 스모크 테스트를 사전에 검증하는 Shift-left 테스트 방향의 확장 논의에 기여'
+        ],
+      },
       {
         title: '게임 연령등급 검수 자동화로 QA 생산성 5배 향상',
         date: '2025.11',
