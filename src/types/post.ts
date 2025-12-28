@@ -17,9 +17,10 @@ export type Thumbnail =
 export interface Formatter {
   title: string;
   slug: string;
-  date?: string;
+  date?: string | null;
   thumbnail?: Thumbnail;
+  tags?: string[] | null;
 }
 
-export type CardProps = Pick<Formatter, 'date' | 'title' | 'thumbnail'> &
+export type CardProps = Pick<Formatter, 'date' | 'title' | 'thumbnail' | 'tags'> &
   Pick<MdxNode, 'body'>;

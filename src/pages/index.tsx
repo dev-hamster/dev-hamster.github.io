@@ -19,14 +19,15 @@ const IndexPage = ({ data }: IndexPageProps) => {
   const posts = data.allMdx.nodes;
 
   return (
-    <main>
+    <main className='bg-white relative w-full'>
       <Header />
       <Layout>
-        <div className='grid grid-cols-1 gap-x-2 gap-y-4'>
-          {posts.map((post) => (
+        <div className='pb-4'>
+          {posts.map((post, index) => (
             <Link
               key={post.id}
               to={post.frontmatter.slug}
+              className='block'
               style={{
                 textDecoration: 'none',
               }}
@@ -34,7 +35,9 @@ const IndexPage = ({ data }: IndexPageProps) => {
               <Card
                 thumbnail={post.frontmatter.thumbnail}
                 title={post.frontmatter.title}
-                {...post}
+                date={post.frontmatter.date}
+                tags={post.frontmatter.tags}
+                body={post.body}
               />
             </Link>
           ))}
@@ -48,7 +51,7 @@ export default IndexPage;
 
 export const Head: HeadFC = () => <title>Home Page</title>;
 
-export const i = graphql`
+export const query = graphql`
   query {
     allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
@@ -56,6 +59,8 @@ export const i = graphql`
         frontmatter {
           title
           slug
+          date(formatString: "YYYY-MM-DD")
+          tags
           thumbnail {
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
