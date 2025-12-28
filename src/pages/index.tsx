@@ -1,11 +1,9 @@
 import { graphql, Link, type HeadFC } from 'gatsby';
 import * as React from 'react';
-import removeMarkdown from 'remove-markdown';
 
 import { Card } from 'components/Card';
-import { Header } from 'components/Header';
-import { Layout } from 'components/Layout';
 import { MdxNode } from 'types/post';
+import { PageLayout } from 'components/Layout';
 
 type IndexPageProps = {
   data: {
@@ -19,9 +17,7 @@ const IndexPage = ({ data }: IndexPageProps) => {
   const posts = data.allMdx.nodes;
 
   return (
-    <main className='bg-white relative w-full'>
-      <Header />
-      <Layout>
+    <PageLayout>
         <div className='pb-4'>
           {posts.map((post, index) => (
             <Link
@@ -42,14 +38,13 @@ const IndexPage = ({ data }: IndexPageProps) => {
             </Link>
           ))}
         </div>
-      </Layout>
-    </main>
+    </PageLayout>
   );
 };
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const Head: HeadFC = () => <title>dev-hamster</title>;
 
 export const query = graphql`
   query {
