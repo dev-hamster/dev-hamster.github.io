@@ -10,16 +10,22 @@ export const Header = () => {
       <Link to='/' className='font-bold text-2xl text-black font-ubuntu cursor-pointer no-underline'>
         dev-hamster
       </Link>
-      <nav className='flex gap-2 items-center text-base text-[#222] font-ubuntu'>
+      <nav className='flex gap-4 items-center text-base text-[#222] font-ubuntu'>
         <Link
           to='/'
-          className={`w-[48px] cursor-pointer no-underline ${!pathname.startsWith('/about') ? 'text-[#222]' : 'text-[#838383]'}`}
+          className={`cursor-pointer no-underline ${pathname === '/' ? 'text-[#222]' : 'text-[#838383]'}`}
         >
           Blog
         </Link>
         <Link
+          to='/log'
+          className={`cursor-pointer no-underline ${pathname.startsWith('/log') ? 'text-[#222]' : 'text-[#838383]'}`}
+        >
+          Log
+        </Link>
+        <Link
           to='/about'
-          className={`w-[48px] cursor-pointer no-underline ${pathname.startsWith('/about') ? 'text-[#222]' : 'text-[#838383]'}`}
+          className={`cursor-pointer no-underline ${pathname.startsWith('/about') ? 'text-[#222]' : 'text-[#838383]'}`}
         >
           About
         </Link>

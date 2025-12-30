@@ -20,6 +20,7 @@ export interface Formatter {
   date?: string | null;
   thumbnail?: Thumbnail;
   tags?: string[] | null;
+  type?: 'log' | null;
 }
 
 export type CardProps = Pick<Formatter, 'date' | 'title' | 'thumbnail' | 'tags'> &

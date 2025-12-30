@@ -48,7 +48,14 @@ export const Head: HeadFC = () => <title>dev-hamster</title>;
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+    allMdx(
+      filter: {
+        frontmatter: {
+          type: { ne: "log" }
+        }
+      }
+      sort: { frontmatter: { date: DESC } }
+    ) {
       nodes {
         id
         frontmatter {
