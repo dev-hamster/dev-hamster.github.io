@@ -26,9 +26,9 @@ const LogPage = ({ data }: LogPageProps) => {
     <PageLayout>
       <div className="pb-4">
         {allLogs.length === 0 && (
-          <div className="text-center text-gray-500">
-            <div className="text-2xl">📝</div>
-            아직 포스트가 없습니다.
+          <div className="h-[100px] flex flex-col items-center justify-center">
+            <div className="text-2xl">￿</div>
+            <div>아직 포스트가 없습니다.</div>
           </div>
         )}
         {allLogs.length > 0 &&
@@ -61,6 +61,7 @@ export const query = graphql`
           slug
           date(formatString: "YYYY-MM-DD")
           tags
+          type
           thumbnail {
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)

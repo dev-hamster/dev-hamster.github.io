@@ -1,0 +1,14 @@
+---
+title: waitForExist vs waitForDisplayed
+slug: /waitForExist vs waitForDisplayed
+date: 2026-01-04
+tags: ['TIL', '테스트 자동화']
+type: 'log'
+---
+
+webdriverIO의 `waitFor...` 메서드 차이
+
+- wiatForExist: 주어진 타임아웃 시간 내에 DOM에 엘리먼트를 기다림. DOM에 하나라도 매칭이 되면 true를 리턴
+- waitForDisplayed: 뷰포트내에 있는가
+- waitForClckable: clickable한지 아닌지 상태를 기다림(브라우저만 지원) 이미 있다고 가정함
+- waitUntil: 주어진 컨디션이 참이 될때까지 기다림 (요소가 존재할때까지 기다리지 않음)

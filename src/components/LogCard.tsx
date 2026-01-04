@@ -19,6 +19,19 @@ const sanitizeSchema = {
   },
 };
 
+// 마크다운 커스텀 컴포넌트
+const markdownComponents = {
+  // 리스트 스타일
+  ul: (props: any) => <ul {...props} style={{ listStyle: 'revert' }} />,
+  ol: (props: any) => (
+    <ol
+      {...props}
+      style={{ listStyleType: 'decimal', paddingLeft: '1.5rem' }}
+    />
+  ),
+  li: (props: any) => <li {...props} style={{ marginBottom: '0.25rem' }} />,
+};
+
 export const LogCard = ({ title, body, date, tags }: CardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const formattedDate = formatDateToKorean(date);
@@ -31,18 +44,26 @@ export const LogCard = ({ title, body, date, tags }: CardProps) => {
     <div className="bg-white border-b border-[#F2F2F2] border-solid overflow-hidden flex flex-col py-[33px]">
       {/* Date */}
       {formattedDate && (
-        <p className="text-[13px] text-[#222] font-ubuntu font-normal leading-normal whitespace-pre-wrap">
-          {formattedDate}
-        </p>
+        <div className="mb-2">
+          <p className="text-[13px] text-gray-500 font-ubuntu font-normal">
+            {formattedDate}
+          </p>
+        </div>
       )}
-      {/* Description */}
+
+      {/* Content */}
       <div className="relative">
         <div
-          className={`overflow-hidden ${!isExpanded ? 'max-h-[4.5rem]' : ''}`}
+          className={`overflow-hidden ${
+            !isExpanded
+              ? 'line-clamp-3 [&>*]:line-clamp-none [&>p]:line-clamp-3'
+              : ''
+          }`}
         >
-          <div className="markdown-body text-[16px] text-[#222] font-ubuntu font-normal leading-normal">
+          <div className="markdown-body text-[15px] text-gray-900 font-ubuntu font-normal leading-relaxed">
             <Markdown
               rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
+              components={markdownComponents}
             >
               {body}
             </Markdown>
@@ -51,7 +72,7 @@ export const LogCard = ({ title, body, date, tags }: CardProps) => {
         {shouldShowToggle && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-2 text-[14px] text-[#3a97ed] font-ubuntu font-normal hover:underline cursor-pointer"
+            className="mt-2 w-full flex justify-end text-[14px] text-[#1DA1F2] font-ubuntu font-normal hover:underline cursor-pointer transition-colors duration-150"
           >
             {isExpanded ? '접기' : '더보기'}
           </button>
