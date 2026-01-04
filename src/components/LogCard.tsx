@@ -28,23 +28,19 @@ export const LogCard = ({ title, body, date, tags }: CardProps) => {
   const shouldShowToggle = bodyLines.length > 3 || body.length > 200;
 
   return (
-    <div className='bg-white border-b border-[#F2F2F2] border-solid overflow-hidden flex flex-col py-[33px]'>
+    <div className="bg-white border-b border-[#F2F2F2] border-solid overflow-hidden flex flex-col py-[33px]">
       {/* Date */}
       {formattedDate && (
-        <p className='text-[13px] text-[#222] font-ubuntu font-normal leading-normal whitespace-pre-wrap'>
+        <p className="text-[13px] text-[#222] font-ubuntu font-normal leading-normal whitespace-pre-wrap">
           {formattedDate}
         </p>
       )}
       {/* Description */}
-      <div className='relative'>
+      <div className="relative">
         <div
-          className={`overflow-hidden ${
-            !isExpanded
-              ? 'max-h-[4.5rem]'
-              : ''
-          }`}
+          className={`overflow-hidden ${!isExpanded ? 'max-h-[4.5rem]' : ''}`}
         >
-          <div className='markdown-body text-[16px] text-[#222] font-ubuntu font-normal leading-normal'>
+          <div className="markdown-body text-[16px] text-[#222] font-ubuntu font-normal leading-normal">
             <Markdown
               rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
             >
@@ -55,7 +51,7 @@ export const LogCard = ({ title, body, date, tags }: CardProps) => {
         {shouldShowToggle && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className='mt-2 text-[14px] text-[#3a97ed] font-ubuntu font-normal hover:underline cursor-pointer'
+            className="mt-2 text-[14px] text-[#3a97ed] font-ubuntu font-normal hover:underline cursor-pointer"
           >
             {isExpanded ? '접기' : '더보기'}
           </button>

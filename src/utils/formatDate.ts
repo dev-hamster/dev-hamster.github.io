@@ -13,16 +13,16 @@ export const formatDateToKorean = (dateString?: string | null): string => {
       const year = parseInt(parts[0], 10);
       const month = parseInt(parts[1], 10);
       const day = parseInt(parts[2], 10);
-      
+
       if (!isNaN(year) && !isNaN(month) && !isNaN(day)) {
-        if(year === new Date().getFullYear()) {
+        if (year === new Date().getFullYear()) {
           return `${month}월 ${day}일`;
         } else {
           return `${year}년 ${month}월 ${day}일`;
         }
       }
     }
-    
+
     // 파싱 실패 시 Date 객체 사용
     const date = new Date(dateString);
     if (!isNaN(date.getTime())) {
@@ -30,10 +30,9 @@ export const formatDateToKorean = (dateString?: string | null): string => {
       const day = date.getDate();
       return `${month}월 ${day}일`;
     }
-    
+
     return dateString;
   } catch {
     return dateString;
   }
 };
-

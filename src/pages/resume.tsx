@@ -15,7 +15,7 @@ import '../styles/resume.css';
 
 const ResumePage = () => {
   return (
-    <div className='font-noto resume-page'>
+    <div className="font-noto resume-page">
       <Intro />
       <SkillsAndTools />
       <WorkExperience />

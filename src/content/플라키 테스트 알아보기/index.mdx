@@ -4,6 +4,7 @@ slug: /플라키 테스트 알아보기
 date: 2026-01-04
 tags: ['TIL', '테스트 자동화']
 ---
+
 본 글은 webdriverIO 기준으로 GPT의 도움을 받아 학습한 내용입니다.
 
 ## 플라키 테스트란?
@@ -19,19 +20,19 @@ tags: ['TIL', '테스트 자동화']
 ## 플라키 테스트가 발생하는 원인
 
 1. 네트워크 상태
-    - API 응답 지연으로 UI가 완전히 렌더링 되지 않는 경우 (예: 스켈레톤 UI)
-    - 로그인 버튼 터치 후, 마이페이지로 이동할 때 네트워크가 느려 페이지 렌더링이 오래걸림
+   - API 응답 지연으로 UI가 완전히 렌더링 되지 않는 경우 (예: 스켈레톤 UI)
+   - 로그인 버튼 터치 후, 마이페이지로 이동할 때 네트워크가 느려 페이지 렌더링이 오래걸림
 2. 느린 렌더링
-    
-    DOM에는 이미 존재하지만 아직 인터렉션이 가능한 상태가 아닌 경우
-    
-    - 저사양 디바이스
-    - CI 환경
-    - 리액트 리스트 렌더링이 아직 끝나지 않은 상태
-    - 모달/바텀시트 애니메이션이 진행 중인 상태
-3. 테스트 실행 타이밍 
-    - 동기적 단언으로 인해 retry를 하지 않는 경우
-    - 버튼 클릭 직후 UI 업데이트 전에 검증하는 경우
+
+   DOM에는 이미 존재하지만 아직 인터렉션이 가능한 상태가 아닌 경우
+   - 저사양 디바이스
+   - CI 환경
+   - 리액트 리스트 렌더링이 아직 끝나지 않은 상태
+   - 모달/바텀시트 애니메이션이 진행 중인 상태
+
+3. 테스트 실행 타이밍
+   - 동기적 단언으로 인해 retry를 하지 않는 경우
+   - 버튼 클릭 직후 UI 업데이트 전에 검증하는 경우
 
 ## 어떻게 다루면 좋을까?
 
@@ -41,17 +42,15 @@ tags: ['TIL', '테스트 자동화']
 
 ```jsx
 // Bad
-expect(await textElement.getText()).toEqual('Hello World!')
+expect(await textElement.getText()).toEqual('Hello World!');
 
 // Good
-await expect(textElement).toHaveText('Hello World!')
+await expect(textElement).toHaveText('Hello World!');
 ```
-
-
 
 ### 테스트 retry 하기
 
-최후의 수단으로  외부 상태가 오염됐을 때(DB, 로그인 실패 등) 테스트 전체를 새 인스턴스에서 시작할 수 있다. 또한 플라키 테스트를 탐지 하기 위해 `—repeat` 옵션으로 여러번 실행해 불안정한 테스트를 식별할 수 있다.
+최후의 수단으로 외부 상태가 오염됐을 때(DB, 로그인 실패 등) 테스트 전체를 새 인스턴스에서 시작할 수 있다. 또한 플라키 테스트를 탐지 하기 위해 `—repeat` 옵션으로 여러번 실행해 불안정한 테스트를 식별할 수 있다.
 
 ---
 
@@ -62,8 +61,3 @@ await expect(textElement).toHaveText('Hello World!')
 [https://webdriver.io/docs/retry/](https://webdriver.io/docs/retry/)
 
 [https://www.codewithjason.com/what-causes-flaky-tests/](https://www.codewithjason.com/what-causes-flaky-tests/)
-
-
-
-
-

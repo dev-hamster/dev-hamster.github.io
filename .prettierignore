@@ -1,0 +1,21 @@
+# Dependencies
+node_modules
+package-lock.json
+
+# Build outputs
+.cache
+public
+dist
+build
+
+# Generated files
+src/gatsby-types.d.ts
+*.generated.*
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+

@@ -4,16 +4,16 @@ import { INTRO, TITLE } from 'constants/resume';
 
 export const Intro = () => {
   return (
-    <div className='mt-16 max-w-[768px] m-auto'>
-      <div className='mt-16 ml-6 mr-6'>
-        <div className='flex flex-wrap items-center gap-3'>
-          <p className='text-[32px] font-bold text-pretty whitespace-pre-line'>
+    <div className="mt-16 max-w-[768px] m-auto">
+      <div className="mt-16 ml-6 mr-6">
+        <div className="flex flex-wrap items-center gap-3">
+          <p className="text-[32px] font-bold text-pretty whitespace-pre-line">
             {TITLE}
           </p>
         </div>
 
         <Paragraph>
-          <span className='highlight'>
+          <span className="highlight">
             품질을 높이는 과정을 즐기며, 더 효율적인 방법을 고민합니다.
           </span>
         </Paragraph>
@@ -21,29 +21,29 @@ export const Intro = () => {
           <Paragraph key={idx}>{content}</Paragraph>
         ))}
 
-        <div className='mt-5 flex flex-col gap-[12px] font-body'>
+        <div className="mt-5 flex flex-col gap-[12px] font-body">
           <div>
-            <p className='flex gap-1 items-center'>
+            <p className="flex gap-1 items-center">
               <span>Blog</span>
             </p>
-            <Link url='https://dev-hamster.github.io'>
+            <Link url="https://dev-hamster.github.io">
               https://dev-hamster.github.io
             </Link>
           </div>
           <div>
-            <p className='flex gap-1 items-center'>
+            <p className="flex gap-1 items-center">
               <span>GitHub</span>
             </p>
-            <Link url='https://github.com/dev-hamster'>
+            <Link url="https://github.com/dev-hamster">
               https://github.com/dev-hamster
             </Link>
           </div>
           <div>
-            <p className='flex gap-1 items-center'>
+            <p className="flex gap-1 items-center">
               <span>Mail</span>
             </p>
             <p>
-              <a href='mailto:dndbekfrl1@gmail.com' className='text-blue-600'>
+              <a href="mailto:dndbekfrl1@gmail.com" className="text-blue-600">
                 dndbekfrl1@gmail.com
               </a>
             </p>
@@ -55,7 +55,7 @@ export const Intro = () => {
 };
 
 const Paragraph = ({ children }: { children: React.ReactNode }) => {
-  return <div className='mt-2 text-base leading-6'>{children}</div>;
+  return <div className="mt-2 text-base leading-6">{children}</div>;
 };
 
 const Link = ({
@@ -72,8 +72,8 @@ const Link = ({
           text-blue-600
           `}
       href={url}
-      target='_blank'
-      rel='noreferrer'
+      target="_blank"
+      rel="noreferrer"
     >
       {children}
     </a>

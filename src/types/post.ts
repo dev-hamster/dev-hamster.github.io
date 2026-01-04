@@ -23,5 +23,8 @@ export interface Formatter {
   type?: 'log' | null;
 }
 
-export type CardProps = Pick<Formatter, 'date' | 'title' | 'thumbnail' | 'tags'> &
+export type CardProps = Pick<
+  Formatter,
+  'date' | 'title' | 'thumbnail' | 'tags'
+> &
   Pick<MdxNode, 'body'>;

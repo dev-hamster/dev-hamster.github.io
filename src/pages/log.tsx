@@ -24,10 +24,10 @@ const LogPage = ({ data }: LogPageProps) => {
 
   return (
     <PageLayout>
-      <div className='pb-4'>
+      <div className="pb-4">
         {allLogs.length === 0 && (
-          <div className='text-center text-gray-500'>
-            <div className='text-2xl'>📝</div>
+          <div className="text-center text-gray-500">
+            <div className="text-2xl">📝</div>
             아직 포스트가 없습니다.
           </div>
         )}
@@ -72,4 +72,3 @@ export const query = graphql`
     }
   }
 `;
-

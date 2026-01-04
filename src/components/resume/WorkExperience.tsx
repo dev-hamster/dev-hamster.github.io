@@ -7,7 +7,7 @@ import { WorkExperienceItem } from './WorkExperienceItem';
 
 export const WorkExperience = () => {
   return (
-    <Section title='Work Experience'>
+    <Section title="Work Experience">
       <WorkExperienceItem data={WORK_EXPERIENCE} />
     </Section>
   );

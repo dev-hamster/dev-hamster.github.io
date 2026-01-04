@@ -11,8 +11,13 @@
 
   html,
   body {
-    font-family: system-ui, -apple-system, 'Noto Sans KR', 'Apple SD Gothic Neo',
-      Arial, sans-serif;
+    font-family:
+      system-ui,
+      -apple-system,
+      'Noto Sans KR',
+      'Apple SD Gothic Neo',
+      Arial,
+      sans-serif;
     font-size: 11pt;
     line-height: 1.45;
     color: #000;

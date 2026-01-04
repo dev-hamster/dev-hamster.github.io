@@ -25,7 +25,7 @@ const sanitizeSchema = {
 
 const ListItem = ({ text }: { text: string }) => {
   return (
-    <div className='flex gap-2 '>
+    <div className="flex gap-2 ">
       <span>-</span>
       <Markdown rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}>
         {text}
@@ -36,7 +36,7 @@ const ListItem = ({ text }: { text: string }) => {
 
 export const ProjectItem = ({ data }: { data: TProject[] }) => {
   return (
-    <div className='flex flex-col gap-7'>
+    <div className="flex flex-col gap-7">
       {data.map(
         ({
           title,
@@ -50,14 +50,14 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
           techStack,
           team,
         }) => (
-          <div key={title} className='font-body'>
+          <div key={title} className="font-body">
             {/* 프로젝트명, 날짜 */}
             <div>
-              <div className='flex items-center flex-wrap gap-2'>
-                <p className='font-bold'>{title}</p>
-                {titleCaption && <p className=''>— {titleCaption}</p>}
+              <div className="flex items-center flex-wrap gap-2">
+                <p className="font-bold">{title}</p>
+                {titleCaption && <p className="">— {titleCaption}</p>}
               </div>
-              <p className='flex items-center gap-1 mt-2 leading-5 font-ubuntu'>
+              <p className="flex items-center gap-1 mt-2 leading-5 font-ubuntu">
                 <CalendarIcon width={16} height={16} />
                 {date}
               </p>
@@ -69,12 +69,12 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
                   <a
                     key={url}
                     href={url}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='flex items-center gap-1 mt-2 text-blue-600'
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-1 mt-2 text-blue-600"
                   >
                     {icon === 'github' ? (
-                      <div className='mt-1'>
+                      <div className="mt-1">
                         <GithubIcon width={12} height={12} />
                       </div>
                     ) : (
@@ -87,11 +87,11 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
             )}
             {/* 기술 스택 */}
             {techStack && techStack.length > 0 && (
-              <div className='flex flex-wrap gap-2 mt-2 font-ubuntu'>
+              <div className="flex flex-wrap gap-2 mt-2 font-ubuntu">
                 <ListItem text={`기술스택: ${techStack.join(', ')}`}></ListItem>
               </div>
             )}
-            <div className='flex flex-col gap-1 mt-2'>
+            <div className="flex flex-col gap-1 mt-2">
               {/* 조직명 */}
               {organization && <ListItem text={`근무처: ${organization}`} />}
               {/* 소개 */}

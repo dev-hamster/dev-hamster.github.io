@@ -25,7 +25,7 @@ const sanitizeSchema = {
 
 const DescriptionItem = ({ text }: { text: string }) => {
   return (
-    <div className='flex gap-2'>
+    <div className="flex gap-2">
       <Markdown rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}>
         {text}
       </Markdown>
@@ -35,7 +35,7 @@ const DescriptionItem = ({ text }: { text: string }) => {
 
 const ListItem = ({ text }: { text: string }) => {
   return (
-    <div className='flex gap-2 '>
+    <div className="flex gap-2 ">
       <span>-</span>
       <Markdown rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}>
         {text}
@@ -57,12 +57,12 @@ const ProjectItem = ({
   team,
 }: TWorkExperience) => {
   return (
-    <div className='mt-3 font-body'>
+    <div className="mt-3 font-body">
       {/* 프로젝트명, 날짜 */}
       <div>
-        <div className='flex items-center flex-wrap gap-[2px]'>
-          <p className='font-bold'>{title}</p>
-          {titleCaption && <p className=' '>{titleCaption}</p>}
+        <div className="flex items-center flex-wrap gap-[2px]">
+          <p className="font-bold">{title}</p>
+          {titleCaption && <p className=" ">{titleCaption}</p>}
         </div>
         {/* <p className="flex items-center gap-1 mt-2  leading-5 font-ubuntu">
           <CalendarIcon width={16} height={16} />
@@ -71,7 +71,7 @@ const ProjectItem = ({
       </div>
       {/* 기술 스택 */}
       {techStack && techStack.length > 0 && (
-        <div className='flex flex-wrap gap-2 mt-2 font-ubuntu'>
+        <div className="flex flex-wrap gap-2 mt-2 font-ubuntu">
           <ListItem text={`기술스택: ${techStack.join(', ')}`}></ListItem>
         </div>
       )}
@@ -82,9 +82,9 @@ const ProjectItem = ({
             <a
               key={url}
               href={url}
-              target='_blank'
-              rel='noreferrer'
-              className='flex items-center gap-[2px] mt-2 text-blue-600'
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-[2px] mt-2 text-blue-600"
             >
               {icon === 'github' ? (
                 <GithubIcon width={12} height={12} />
@@ -96,7 +96,7 @@ const ProjectItem = ({
           ))}
         </>
       )}
-      <div className='flex flex-col gap-1 mt-2'>
+      <div className="flex flex-col gap-1 mt-2">
         {/* 조직명 */}
         {organization && <ListItem text={`근무처: ${organization}`} />}
         {/* 소개 */}
@@ -116,7 +116,7 @@ const ProjectItem = ({
 
 export const WorkExperienceItem = ({ data }: { data: TWorkExperience[] }) => {
   return (
-    <div className='flex flex-col gap-10'>
+    <div className="flex flex-col gap-10">
       {data.map(
         ({
           title,
@@ -129,24 +129,24 @@ export const WorkExperienceItem = ({ data }: { data: TWorkExperience[] }) => {
           team,
           project,
         }) => (
-          <div key={title} className='font-body'>
+          <div key={title} className="font-body">
             {/* 프로젝트명, 날짜 */}
             <div>
-              <div className='flex items-center flex-wrap gap-[8px]'>
-                <p className='font-bold font-title'>{title}</p>
-                {titleCaption && <p className=''>{titleCaption}</p>}
+              <div className="flex items-center flex-wrap gap-[8px]">
+                <p className="font-bold font-title">{title}</p>
+                {titleCaption && <p className="">{titleCaption}</p>}
               </div>
-              <p className='flex items-center gap-1 mt-2 leading-5 font-ubuntu'>
+              <p className="flex items-center gap-1 mt-2 leading-5 font-ubuntu">
                 <CalendarIcon width={16} height={16} />
                 {date}
               </p>
             </div>
-            <div className='flex flex-col gap-1 mt-2'>
+            <div className="flex flex-col gap-1 mt-2">
               {description.map((desc, idx) => (
                 <DescriptionItem key={idx} text={desc} />
               ))}
             </div>
-            <div className='flex flex-col gap-[8px]'>
+            <div className="flex flex-col gap-[8px]">
               {project?.map((data) => (
                 <ProjectItem key={data.title} {...data} />
               ))}

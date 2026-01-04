@@ -20,7 +20,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "deploy": "gatsby build && gh-pages -d public"
+    "deploy": "gatsby build && gh-pages -d public",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md,mdx}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,md,mdx}\""
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
@@ -54,6 +56,7 @@
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-remark-images": "^7.14.0",
     "gh-pages": "^6.2.0",
+    "prettier": "^3.2.5",
     "react-helmet": "^6.1.0",
     "typescript": "^5.3.3"
   }

@@ -6,7 +6,7 @@ import { Section } from './Section';
 
 export const Project = () => {
   return (
-    <Section title='Project'>
+    <Section title="Project">
       <ProjectItem data={PROJECT} />
     </Section>
   );

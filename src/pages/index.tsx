@@ -24,12 +24,12 @@ const IndexPage = ({ data }: IndexPageProps) => {
 
   return (
     <PageLayout>
-      <div className='pb-4'>
+      <div className="pb-4">
         {posts.map((post, index) => (
           <Link
             key={post.id}
             to={post.frontmatter.slug}
-            className='block'
+            className="block"
             style={{
               textDecoration: 'none',
             }}
