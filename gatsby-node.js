@@ -11,7 +11,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id
           frontmatter {
             slug
-            type
           }
           internal {
             contentFilePath
@@ -26,10 +25,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   // Create blog post pages.
-  // Log와 일반 블로그 포스트만 페이지 생성
-  const posts = result.data.allMdx.nodes.filter(
-    (node) => !node.frontmatter.type || node.frontmatter.type === 'log'
-  );
+  // 모든 MDX 파일에 대해 페이지 생성 (type 필드가 없으므로 모두 생성)
+  const posts = result.data.allMdx.nodes;
 
   // you'll call `createPage` for each result
   posts.forEach((node) => {
