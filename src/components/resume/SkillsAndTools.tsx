@@ -6,11 +6,11 @@ import { Section } from './Section';
 export const SkillsAndTools = () => {
   return (
     <Section title="Skills & Tools">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-5">
         {SKILLS_AND_TOOLS.map(({ title, content }) => (
-          <div className="flex flex-col gap-[8px]">
-            <p className="font-ubuntu">{title}</p>
-            <p className="text-base leading-5">{content}</p>
+          <div key={title} className="flex flex-col gap-2">
+            <p className="font-ubuntu font-medium text-gray-900">{title}</p>
+            <p className="text-base leading-7 text-gray-700">{content}</p>
           </div>
         ))}
       </div>

@@ -21,9 +21,9 @@ export const Intro = () => {
           <Paragraph key={idx}>{content}</Paragraph>
         ))}
 
-        <div className="mt-5 flex flex-col gap-[12px] font-body">
+        <div className="mt-6 flex flex-col gap-4 font-body">
           <div>
-            <p className="flex gap-1 items-center">
+            <p className="flex gap-1 items-center text-sm font-medium text-gray-600 mb-1">
               <span>Blog</span>
             </p>
             <Link url="https://dev-hamster.github.io">
@@ -31,7 +31,7 @@ export const Intro = () => {
             </Link>
           </div>
           <div>
-            <p className="flex gap-1 items-center">
+            <p className="flex gap-1 items-center text-sm font-medium text-gray-600 mb-1">
               <span>GitHub</span>
             </p>
             <Link url="https://github.com/dev-hamster">
@@ -39,11 +39,11 @@ export const Intro = () => {
             </Link>
           </div>
           <div>
-            <p className="flex gap-1 items-center">
+            <p className="flex gap-1 items-center text-sm font-medium text-gray-600 mb-1">
               <span>Mail</span>
             </p>
             <p>
-              <a href="mailto:dndbekfrl1@gmail.com" className="text-blue-600">
+              <a href="mailto:dndbekfrl1@gmail.com" className="text-blue-600 hover:text-blue-700">
                 dndbekfrl1@gmail.com
               </a>
             </p>
@@ -55,7 +55,7 @@ export const Intro = () => {
 };
 
 const Paragraph = ({ children }: { children: React.ReactNode }) => {
-  return <div className="mt-2 text-base leading-6">{children}</div>;
+  return <div className="mt-3 text-base leading-7 text-gray-700">{children}</div>;
 };
 
 const Link = ({

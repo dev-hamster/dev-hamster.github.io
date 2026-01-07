@@ -8,11 +8,11 @@ export const Section = ({
   children: React.ReactNode;
 }) => {
   return (
-    <section className="mt-10 max-w-[768px] m-auto">
-      <div className="w-full h-[2px] bg-[#E2E8F0]" />
+    <section className="mt-16 max-w-[768px] m-auto">
+      <div className="w-full h-[1px] bg-gray-200" />
       <div className="ml-6 mr-6">
-        <p className="mt-8 font-title font-bold">{title}</p>
-        <div className="mt-7">{children}</div>
+        <h2 className="mt-10 mb-8 font-title font-bold text-gray-900">{title}</h2>
+        <div className="mt-6">{children}</div>
       </div>
     </section>
   );

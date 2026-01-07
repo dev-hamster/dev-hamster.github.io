@@ -25,8 +25,8 @@ const sanitizeSchema = {
 
 const ListItem = ({ text }: { text: string }) => {
   return (
-    <div className="flex gap-2 ">
-      <span>-</span>
+    <div className="flex gap-3 leading-7 text-gray-700">
+      <span className="text-gray-400 flex-shrink-0">•</span>
       <Markdown rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}>
         {text}
       </Markdown>
@@ -36,7 +36,7 @@ const ListItem = ({ text }: { text: string }) => {
 
 export const ProjectItem = ({ data }: { data: TProject[] }) => {
   return (
-    <div className="flex flex-col gap-7">
+    <div className="flex flex-col gap-10">
       {data.map(
         ({
           title,
@@ -54,11 +54,11 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
             {/* 프로젝트명, 날짜 */}
             <div>
               <div className="flex items-center flex-wrap gap-2">
-                <p className="font-bold">{title}</p>
-                {titleCaption && <p className="">— {titleCaption}</p>}
+                <p className="font-bold text-gray-900">{title}</p>
+                {titleCaption && <p className="text-gray-600">— {titleCaption}</p>}
               </div>
-              <p className="flex items-center gap-1 mt-2 leading-5 font-ubuntu">
-                <CalendarIcon width={16} height={16} />
+              <p className="flex items-center gap-1 mt-2 leading-6 text-sm text-gray-600 font-ubuntu">
+                <CalendarIcon width={16} height={16} className="text-gray-500" />
                 {date}
               </p>
             </div>
@@ -71,7 +71,7 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
                     href={url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-1 mt-2 text-blue-600"
+                    className="flex items-center gap-1 mt-2 text-blue-600 hover:text-blue-700 transition-colors"
                   >
                     {icon === 'github' ? (
                       <div className="mt-1">
@@ -91,7 +91,7 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
                 <ListItem text={`기술스택: ${techStack.join(', ')}`}></ListItem>
               </div>
             )}
-            <div className="flex flex-col gap-1 mt-2">
+            <div className="flex flex-col gap-2 mt-3">
               {/* 조직명 */}
               {organization && <ListItem text={`근무처: ${organization}`} />}
               {/* 소개 */}
