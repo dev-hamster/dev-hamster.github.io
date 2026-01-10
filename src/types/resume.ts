@@ -15,6 +15,7 @@ export interface Project {
   techStack?: string[]; // 기술 스택
   team?: string; // 팀 구성
   link?: Link[]; // 프로젝트 링크
+  color?: string; // 프로젝트 색상
 }
 
 export interface WorkExperience extends Project {
