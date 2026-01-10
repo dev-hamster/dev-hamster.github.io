@@ -55,10 +55,16 @@ export const ProjectItem = ({ data }: { data: TProject[] }) => {
             <div>
               <div className="flex items-center flex-wrap gap-2">
                 <p className="font-bold text-gray-900">{title}</p>
-                {titleCaption && <p className="text-gray-600">— {titleCaption}</p>}
+                {titleCaption && (
+                  <p className="text-gray-600">— {titleCaption}</p>
+                )}
               </div>
               <p className="flex items-center gap-1 mt-2 leading-6 text-sm text-gray-600 font-ubuntu">
-                <CalendarIcon width={16} height={16} className="text-gray-500" />
+                <CalendarIcon
+                  width={16}
+                  height={16}
+                  className="text-gray-500"
+                />
                 {date}
               </p>
             </div>

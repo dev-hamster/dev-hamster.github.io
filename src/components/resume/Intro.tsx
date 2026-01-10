@@ -14,7 +14,8 @@ export const Intro = () => {
 
         <Paragraph>
           <span className="highlight">
-            품질을 높이는 과정을 즐기며, 더 효율적인 방법을 고민합니다.
+            개발 경험을 바탕으로 반복적인 QA 업무를 자동화하여 품질 효율을
+            높이는 QA 엔지니어입니다.
           </span>
         </Paragraph>
         {INTRO.map((content, idx) => (
@@ -43,7 +44,10 @@ export const Intro = () => {
               <span>Mail</span>
             </p>
             <p>
-              <a href="mailto:dndbekfrl1@gmail.com" className="text-blue-600 hover:text-blue-700">
+              <a
+                href="mailto:dndbekfrl1@gmail.com"
+                className="text-blue-600 hover:text-blue-700"
+              >
                 dndbekfrl1@gmail.com
               </a>
             </p>
@@ -55,7 +59,9 @@ export const Intro = () => {
 };
 
 const Paragraph = ({ children }: { children: React.ReactNode }) => {
-  return <div className="mt-3 text-base leading-7 text-gray-700">{children}</div>;
+  return (
+    <div className="mt-3 text-base leading-7 text-gray-700">{children}</div>
+  );
 };
 
 const Link = ({
