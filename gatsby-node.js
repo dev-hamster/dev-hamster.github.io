@@ -1,6 +1,7 @@
 const path = require('path');
 const postTemplate = path.resolve(`./src/templates/post.tsx`);
 
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
