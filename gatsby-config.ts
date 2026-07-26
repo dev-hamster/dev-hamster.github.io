@@ -34,14 +34,6 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: './src/images/', // 이미지를 저장
-      },
-      __key: 'images',
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
