@@ -28,6 +28,25 @@ export const SKILLS_AND_TOOLS = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
+    color: '#00B386',
+    title: '',
+    date: '',
+    description: [],
+    project: [
+      {
+        title: '토스 CMS-신한은행 가상계좌 연동 파이프라인 회복성 테스트 설계',
+        date: '2026.05 - 2026.06',
+        techStack: ['Vitest', 'TypeScript', 'Supabase'],
+        description: [
+          '은행 실시간 연동으로 실제 돈이 오가는 시스템이라, 장애나 업무시간 종료로 처리가 끊기면 가상계좌가 중복 배정되거나 입금 확인이 안 된 채로 방치될 위험이 있었음',
+          '실제 Toss/EC2 연동을 매번 재현하기 어려워서, 장애 시나리오는 mock으로 실제 연동 확인은 smoke 테스트 2건으로 나눠서 검증하기로 함',
+          '업무시간 종료 케이스를 테스트하다가 API가 예외를 던지는 걸 발견했는데, 바로 버그로 보지 않고 DB 상태를 직접 확인해서 데이터가 복구 가능한 상태로 남는지부터 검증함',
+          '6개 시나리오 중 5개는 예상대로 동작했고, 1개는 테스트가 잘못된 걸 기대하고 있었다는 걸 발견해서 assertion을 실제 동작 기준으로 고침',
+        ],
+      },
+    ],
+  },
+  {
     color: '#0064FF',
     title: '비바리퍼블리카',
     date: '2025.06 - 2026.02',
