@@ -28,17 +28,18 @@ y: q, w, e
 z: 1, 2, 3
 ```
 
-| x | y | z |
-| --- | --- | --- |
-| a | q | 1 |
-| b | q | 2 |
-| c | q | 3 |
-| a | w | 2 |
-| b | w | 3 |
-| c | w | 1 |
-| a | e | 3 |
-| b | e | 1 |
-| c | e | 2 |
+<table>
+<tr><th>x</th><th>y</th><th>z</th></tr>
+<tr><td>a</td><td>q</td><td>1</td></tr>
+<tr><td>b</td><td>q</td><td>2</td></tr>
+<tr><td>c</td><td>q</td><td>3</td></tr>
+<tr><td>a</td><td>w</td><td>2</td></tr>
+<tr><td>b</td><td>w</td><td>3</td></tr>
+<tr><td>c</td><td>w</td><td>1</td></tr>
+<tr><td>a</td><td>e</td><td>3</td></tr>
+<tr><td>b</td><td>e</td><td>1</td></tr>
+<tr><td>c</td><td>e</td><td>2</td></tr>
+</table>
 
 ## 도구와 알고리즘
 
@@ -64,11 +65,12 @@ A: a, b, c
 
 먼저 `(x, q, a)`라는 조합을 만들면, 커버해야 할 쌍 중 아래 항목들이 채워진다.
 
-| 페어 | 커버 여부 |
-| --- | --- |
-| X-Q | ~~(x,q)~~, (x,w), (y,q), (y,w) |
-| Q-A | ~~(q,a)~~, (q,b), (q,c), (w,a), (w,b), (w,c) |
-| X-A | ~~(x,a)~~, (x,b), (x,c), (y,a), (y,b), (y,c) |
+<table>
+<tr><th>페어</th><th>커버 여부</th></tr>
+<tr><td>X-Q</td><td><del>(x,q)</del>, (x,w), (y,q), (y,w)</td></tr>
+<tr><td>Q-A</td><td><del>(q,a)</del>, (q,b), (q,c), (w,a), (w,b), (w,c)</td></tr>
+<tr><td>X-A</td><td><del>(x,a)</del>, (x,b), (x,c), (y,a), (y,b), (y,c)</td></tr>
+</table>
 
 다음 조합으로 `(x, w, ?)`까지 만들었다고 하자. 마지막 값에 따라 새로 커버되는 조합 수가 달라진다.
 
