@@ -28,10 +28,12 @@ export const SKILLS_AND_TOOLS = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    color: '#00B386',
-    title: '',
-    date: '',
-    description: [],
+    color: '#50F',
+    title: '리트머스',
+    date: '2026.02 -',
+    description: [
+      'AI 네이티브 프로덕트 에이전시에서 챗봇·예약·뱅킹 CMS·풀필먼트 등 다양한 클라이언트 프로젝트의 QA 계획 수립부터 테스트 설계·실행·결과 공유까지 담당했습니다.',
+    ],
     project: [
       {
         title: '토스 CMS-신한은행 가상계좌 연동 파이프라인 회복성 테스트 설계',
@@ -44,6 +46,18 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
           '6개 시나리오 중 5개는 예상대로 동작했고, 1개는 테스트가 잘못된 걸 기대하고 있었다는 걸 발견해서 assertion을 실제 동작 기준으로 고침',
         ],
       },
+      {
+        title: 'AI 테스트케이스 생성 파이프라인 설계',
+        date: '2026.02 - 현재',
+        techStack: ['TypeScript', 'Claude Code Skill', 'Mermaid'],
+        description: [
+          'SSOT 문서와 코드베이스로 테스트케이스를 생성했더니 500개가 나와, 우선순위 기준이 필요했음',
+          '처음엔 RPN(심각도×발생도×검출도) 공식을 썼는데, 특정 케이스 점수가 왜곡되는 걸 발견하고 폐기함',
+          '자체 Risk Score 공식으로 재설계해, 20점 이상만 스모크 테스트로 편입하는 기준을 만듦',
+          '테스트 스텝을 코드베이스 기반으로 바꿨더니, 실행 시 추측이 필요한 항목이 100%에서 21%로 줄어듦',
+          '생성된 TC가 커버리지 기준을 실제로 만족하는지 자동으로 대조하는 가드를 추가함'
+        ]
+      }
     ],
   },
   {
@@ -76,7 +90,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       },
       {
         title: '데이터 기반 QA 기준 재정립 및 승인율 개선',
-        date: '2025.10 - 현재',
+        date: '2025.10 - 2026.02',
         techStack: ['Looker Studio', 'Google Sheets'],
         description: [
           '미니앱 <span class="highlight">승인율을 56% → 64%로 개선</span>하여 출시 병목 해소',
@@ -87,7 +101,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       },
       {
         title: '탐색적 테스트로 희귀·고위험 리스크 조기 발견',
-        date: '2025.09 - 현재',
+        date: '2025.09 - 2026.02',
         description: [
           '<span class="highlight">AdMob 광고 정책 위반 2건</span>을 조기 발견하여 계정 차단·수익 손실 리스크 사전 예방',
           '500+개 미니앱 환경에서 자동화·체크리스트로 커버할 수 없는 정책·운영 리스크 영역에 탐색적 테스트 도입',
@@ -96,7 +110,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       },
       {
         title: '미니앱 검수 워크플로우 자동화 및 QA 운영 효율화',
-        date: '2025.07 - 현재',
+        date: '2025.07 - 2026.02',
         techStack: ['JavaScript', 'Google API', 'Notion API'],
         description: [
           '200+개 미니앱 검수 현황을 팀 전체가 실시간 공유 가능한 상태(대기/진행/승인/거절) 기반 워크플로우로 개편',
