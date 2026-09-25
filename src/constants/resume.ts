@@ -179,7 +179,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
         description: [
           '상태 관리 도입: recoil·react-query 등 여러 라이브러리 비교 후 러닝커브를 고려해 기술 스택 선정',
           '라이브러리 커스터마이징: 제한적인 무료 라이브러리 코드를 분석해 요구에 맞는 스크롤 이벤트 직접 구현',
-          '백오피스 UI 구축(MUI): 여러 도메인이 재사용 가능한 엑셀 다운로드 공통 컴포넌트 개발  기획자 업무 시간 수시간  몇 분으로 단축',
+          '백오피스 UI 구축(MUI): 여러 도메인이 재사용 가능한 엑셀 다운로드 공통 컴포넌트 개발  기획자 업무 시간 수시간 → 몇 분으로 단축',
           '동적 UI·애니메이션 개발: styled-components·react-spring 기반 카드 리스트/타로 카드 선택 인터랙션 구현',
           'NHpay 사주 페이지 개발: yup 기반 입력값 검증, 웹뷰 환경 대응(meta 태그·핀치줌 방지)',
         ],
@@ -189,6 +189,26 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 ] as const;
 
 export const PROJECT: Project[] = [
+  {
+    title: 'AI 이미지 생성 미니앱 - 머쉬룩(MushLook)',
+    date: '2026.02',
+    link: [
+      {
+        url: 'https://dev-hamster.github.io/mushlook-retrospective',
+        text: '회고 글',
+      },
+    ],
+    techStack: ['React', 'OpenAI API', '앱인토스 SDK', 'Claude Code'],
+    team: 'FE 2명',
+    intro:
+      '반려동물 사진에 버섯 코스튬을 씌워주는 AI 이미지 생성 앱인토스 미니앱을 기획부터 출시까지 2주 만에 완성하고 실서비스로 운영했습니다.',
+    contribution: 50,
+    description: [
+      'AI 에이전트(Claude Code) 중심의 개발 워크플로우로 <span class="highlight">기획-개발-출시를 2주 내 완료</span>',
+      '이미지 생성 API 비용이 수익 대비 과도하게 발생하는 문제를 확인하고, 원본 이미지 훼손 없이 품질·비용 균형점을 찾는 최적화 진행',
+      '실사용자 대상 운영을 통해 과금·광고 수익 데이터를 직접 분석하며 서비스 운영 관점의 의사결정 경험 축적',
+    ],
+  },
   {
     title: '북마크 링크 관리 프로젝트 - 트윙클',
     date: '2023.03 - 2023.06',
@@ -256,6 +276,30 @@ export const CERTIFICATES_AND_AWARDS: OtherExperience[] = [
 ];
 
 export const OTHER_EXPERIENCE: OtherExperience[] = [
+  {
+    title: 'LLM QA 방법론 학습 및 블로그 시리즈 작성',
+    date: '2026.04 - 2026.06',
+    description: [
+      '비결정적인 LLM 응답 검증, 챗봇 QA 일관성 확보, 테스트 리포트, CI 테스트 최적화 등 QA 심화 주제를 학습하고 블로그에 정리했습니다.',
+    ],
+    link: [
+      {
+        url: 'https://dev-hamster.github.io/비결정적인%20LLM%20응답%20QA는%20어떻게%20테스트할까',
+      },
+    ],
+  },
+  {
+    title: '알바몬 AI QA 챌린지 참여',
+    date: '2025.11',
+    description: [
+      'PRD 기반 테스트 케이스 생성부터 Playwright 로그인 자동화까지 AI와 협업하는 QA 워크플로우를 실험하고 회고를 공유했습니다.',
+    ],
+    link: [
+      {
+        url: 'https://dev-hamster.github.io/처음으로%20AI와%20협업해본%20QA%20경험',
+      },
+    ],
+  },
   {
     title: 'Playwright E2E 테스트 학습 및 공유',
     date: '2025.06',
