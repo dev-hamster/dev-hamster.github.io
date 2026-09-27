@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { INTRO, TITLE } from 'constants/resume';
+import { INTRO, ONE_LINE_INTRO, TITLE } from 'constants/resume';
 
 export const Intro = () => {
   return (
@@ -13,10 +13,7 @@ export const Intro = () => {
         </div>
 
         <Paragraph>
-          <span className="highlight">
-            개발 경험을 바탕으로 반복적인 QA 업무를 자동화하여 품질 효율을
-            높이는 QA 엔지니어입니다.
-          </span>
+          <span className="highlight">{ONE_LINE_INTRO}</span>
         </Paragraph>
         {INTRO.map((content, idx) => (
           <Paragraph key={idx}>{content}</Paragraph>

@@ -6,7 +6,6 @@ import {
   Footer,
   Intro,
   OtherExperience,
-  Project,
   SkillsAndTools,
   WorkExperience,
 } from 'components/resume/index';
@@ -19,7 +18,6 @@ const ResumePage = () => {
       <Intro />
       <SkillsAndTools />
       <WorkExperience />
-      <Project />
       <Education />
       <CertificatesAndAwards />
       <OtherExperience />

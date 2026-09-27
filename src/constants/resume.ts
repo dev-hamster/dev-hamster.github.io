@@ -2,10 +2,14 @@ import { OtherExperience, Project, WorkExperience } from 'types/resume';
 
 export const TITLE = '박진아';
 
+export const ONE_LINE_INTRO = `
+개발 경험을 바탕으로 반복적인 QA 업무를 자동화하여 품질 효율을 \n
+높이는 QA 엔지니어입니다.`;
+
 export const INTRO = `   
-  - Appium, Playwright, Python 기반 자동화로 대규모 미니앱 검수를 효율화한 경험이 있습니다.
-  - 빠른 릴리즈 환경에서 리스크 기반·탐색적 테스트로 고위험 결함을 조기 발견했습니다.
+  - HTIL 방식으로 AI와 테스트합니다. 테스트 케이스 작성과 실행은 AI가 맡고, 실행 결과를 검토해 유효한 결함만 티켓으로 작성합니다.
   - 필요한 도구와 지표를 직접 설계해 팀 단위 QA 생산성을 개선하는 것을 지향합니다.
+  - Appium기반 자동화로 대규모 미니앱 검수를 효율화한 경험이 있습니다.
   `
   .split('\n')
   .map((x) => x.trim())
@@ -32,18 +36,18 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     title: '리트머스',
     date: '2026.02 -',
     description: [
-      'AI 네이티브 프로덕트 에이전시에서 챗봇·예약·뱅킹 CMS·풀필먼트 등 다양한 클라이언트 프로젝트의 QA 계획 수립부터 테스트 설계·실행·결과 공유까지 담당했습니다.',
+      'AI 네이티브 외주 개발 에이전시에서 챗봇·예약·뱅킹 CMS·풀필먼트 등 다양한 프로젝트의 QA 계획 수립부터 테스트 설계·실행·결과 공유를 담당했습니다.',
     ],
     project: [
       {
-        title: '토스 CMS-신한은행 가상계좌 연동 파이프라인 회복성 테스트 설계',
+        title: '외부 금융 API 연동 파이프라인 회복성 테스트 설계',
         date: '2026.05 - 2026.06',
         techStack: ['Vitest', 'TypeScript', 'Supabase'],
         description: [
-          '은행 실시간 연동으로 실제 돈이 오가는 시스템이라, 장애나 업무시간 종료로 처리가 끊기면 가상계좌가 중복 배정되거나 입금 확인이 안 된 채로 방치될 위험이 있었음',
-          '실제 Toss/EC2 연동을 매번 재현하기 어려워서, 장애 시나리오는 mock으로 실제 연동 확인은 smoke 테스트 2건으로 나눠서 검증하기로 함',
-          '업무시간 종료 케이스를 테스트하다가 API가 예외를 던지는 걸 발견했는데, 바로 버그로 보지 않고 DB 상태를 직접 확인해서 데이터가 복구 가능한 상태로 남는지부터 검증함',
-          '6개 시나리오 중 5개는 예상대로 동작했고, 1개는 테스트가 잘못된 걸 기대하고 있었다는 걸 발견해서 assertion을 실제 동작 기준으로 고침',
+          '외부 금융기관과 연동해 자금이 오가는 시스템이라, 장애나 외부 기관 운영 시간 종료로 처리가 끊기면 자원이 중복 할당되거나 방치될 위험이 있었음',
+          '장애 상황을 운영 환경에서 직접 재현할 수 없어, 장애 시나리오 6개는 mock으로 검증하고 실제 연동은 smoke 테스트 2건으로 확인함',
+          'AI가 작성한 mock 테스트 코드 6개를 검증해 5개는 의도대로 동작하는 걸 확인했고, 운영 시간 종료 케이스 1개는 AI가 실제 구현과 다른 결과를 기대하고 있었음',
+          '실제로는 API가 예외를 던졌는데 바로 버그로 보지 않고 DB를 직접 확인해 데이터가 복구 가능한 상태로 남는 걸 확인했고, 이 기준에 맞게 assertion을 고침',
         ],
       },
       {
@@ -51,10 +55,9 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
         date: '2026.02 - 현재',
         techStack: ['TypeScript', 'Claude Code Skill', 'Mermaid'],
         description: [
-          'SSOT 문서와 코드베이스로 테스트케이스를 생성했더니 500개가 나와, 우선순위 기준이 필요했음',
-          '처음엔 RPN(심각도×발생도×검출도) 공식을 썼는데, 특정 케이스 점수가 왜곡되는 걸 발견하고 폐기함',
-          '자체 Risk Score 공식으로 재설계해, 20점 이상만 스모크 테스트로 편입하는 기준을 만듦',
-          '테스트 스텝을 코드베이스 기반으로 바꿨더니, 실행 시 추측이 필요한 항목이 100%에서 21%로 줄어듦',
+          'AI로 만든 테스트 케이스는 우선순위, 실행 가능성, 커버리지를 보장하지 못해 실무에 바로 쓰기 어려웠음',
+          'SSOT 문서와 코드베이스로 테스트케이스를 생성했더니 500개가 나와, 자체 Risk Score 공식으로 우선순위 기준을 세움',
+          'AI가 테스트 스텝을 실행할 때 코드베이스를 참고하도록 해, 조작할 UI 요소를 추측해야 했던 항목 비율을 21%로 줄임',
           '생성된 TC가 커버리지 기준을 실제로 만족하는지 자동으로 대조하는 가드를 추가함'
         ]
       }
@@ -188,50 +191,6 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
 ] as const;
 
-export const PROJECT: Project[] = [
-  {
-    title: 'AI 이미지 생성 미니앱 - 머쉬룩(MushLook)',
-    date: '2026.02',
-    link: [
-      {
-        url: 'https://dev-hamster.github.io/mushlook-retrospective',
-        text: '회고 글',
-      },
-    ],
-    techStack: ['React', 'OpenAI API', '앱인토스 SDK', 'Claude Code'],
-    team: 'FE 2명',
-    intro:
-      '반려동물 사진에 버섯 코스튬을 씌워주는 AI 이미지 생성 앱인토스 미니앱을 기획부터 출시까지 2주 만에 완성하고 실서비스로 운영했습니다.',
-    contribution: 50,
-    description: [
-      'AI 에이전트(Claude Code) 중심의 개발 워크플로우로 <span class="highlight">기획-개발-출시를 2주 내 완료</span>',
-      '이미지 생성 API 비용이 수익 대비 과도하게 발생하는 문제를 확인하고, 원본 이미지 훼손 없이 품질·비용 균형점을 찾는 최적화 진행',
-      '실사용자 대상 운영을 통해 과금·광고 수익 데이터를 직접 분석하며 서비스 운영 관점의 의사결정 경험 축적',
-    ],
-  },
-  {
-    title: '북마크 링크 관리 프로젝트 - 트윙클',
-    date: '2023.03 - 2023.06',
-    link: [
-      {
-        icon: 'github',
-        url: 'github.com/dev-hamster/linkarchive-Front-End',
-      },
-    ],
-    techStack:
-      'Jest, Next.js, TypeScript, Redux, React Query, Styled-Components'.split(
-        ','
-      ),
-    team: 'FE 2명, BE 2명, 디자이너 1명',
-    intro:
-      '북마크 링크를 공유하는 SNS로, PO로서 칸반보드 로 프로젝트를 관리했습니다.',
-    contribution: 30,
-    description: [
-      '<span class="highlight">Jest 기반 폼 유닛 테스트 학습 및 적용</span>: 프로젝트 이후, 폼 입력 로직의 결함을 사전에 예방하기 위해 Jest로 유닛 테스트를 작성, API 요청은 MSW(Mock Service Worker)로 모킹하여 네트워크 의존성을 제거하고 안정적인 테스트 환경을 구축 [관련 블로그 글](https://dev-hamster.github.io/Jest%EC%97%90%EC%84%A0%20%EC%84%B1%EA%B3%B5%EC%9D%B8%EB%8D%B0%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%97%90%EC%84%A0%20%EC%8B%A4%ED%8C%A8/)',
-    ],
-  },
-];
-
 export const EDUCATION: OtherExperience[] = [
   {
     title: '삼성 청년 SW 아카데미',
@@ -277,18 +236,6 @@ export const CERTIFICATES_AND_AWARDS: OtherExperience[] = [
 
 export const OTHER_EXPERIENCE: OtherExperience[] = [
   {
-    title: 'LLM QA 방법론 학습 및 블로그 시리즈 작성',
-    date: '2026.04 - 2026.06',
-    description: [
-      '비결정적인 LLM 응답 검증, 챗봇 QA 일관성 확보, 테스트 리포트, CI 테스트 최적화 등 QA 심화 주제를 학습하고 블로그에 정리했습니다.',
-    ],
-    link: [
-      {
-        url: 'https://dev-hamster.github.io/비결정적인%20LLM%20응답%20QA는%20어떻게%20테스트할까',
-      },
-    ],
-  },
-  {
     title: '알바몬 AI QA 챌린지 참여',
     date: '2025.11',
     description: [
@@ -299,43 +246,5 @@ export const OTHER_EXPERIENCE: OtherExperience[] = [
         url: 'https://dev-hamster.github.io/처음으로%20AI와%20협업해본%20QA%20경험',
       },
     ],
-  },
-  {
-    title: 'Playwright E2E 테스트 학습 및 공유',
-    date: '2025.06',
-    description: [
-      '초대 링크 회원가입 버그를 계기로 Playwright로 자동화 시나리오 작성하여 팀 위클리에서 접근성 셀렉터와 테스트 자동화의 필요성을 공유했습니다.',
-    ],
-  },
-  {
-    title: '《모던 리액트 Deep Dive》책 스터디',
-    description: [
-      '《모던 리액트 Deep Dive》책 스터디를 운영하여 리액트의 렌더링 및 훅에 대한 개념을 학습했습니다.',
-    ],
-    date: '2024.06 - 2024.10',
-    link: [
-      {
-        url: 'https://github.com/fe-deep-dive/study-react-deep-dive',
-      },
-    ],
-  },
-  {
-    title: '함수형 프로그래밍 스터디',
-    organization: '우아한 형제들',
-    date: '2023.06 - 2023.08',
-    description: [
-      '《쏙쏙들어오는 함수형 코딩》책 스터디에 참여해 고차함수를 이용해 복잡한 문제를 해결하는 방법에 대해 학습했습니다.',
-    ],
-    link: [
-      {
-        url: 'https://techblog.woowahan.com/15660/',
-      },
-    ],
-  },
-  {
-    title: 'MDN 문서 오타 수정 기여',
-    organization: 'MDN',
-    date: '2022.10',
-    description: ['MDN kr 문서 오타를 수정해 오픈소스 기여'],
   },
 ];
