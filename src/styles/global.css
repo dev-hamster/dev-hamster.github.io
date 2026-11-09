@@ -23,4 +23,7 @@
   .highlight {
     @apply px-1 rounded bg-blue-50;
   }
+  .blog-container {
+    @apply max-w-[430px] sm:max-w-[560px] md:max-w-[680px] lg:max-w-[720px] mx-auto px-[17px] md:px-8;
+  }
 }

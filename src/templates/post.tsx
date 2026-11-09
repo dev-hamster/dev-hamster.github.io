@@ -25,7 +25,7 @@ export default function PageTemplate({ data, children }: TemplateProps) {
 
   return (
     <PageLayout>
-      <div style={{ marginTop: '40px' }}>
+      <div className="mt-10 md:mt-16">
         {/* tawilwind가 적용되지 않아 직접 적용 */}
         <MDXProvider
           components={{

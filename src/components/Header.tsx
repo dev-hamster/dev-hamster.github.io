@@ -6,7 +6,7 @@ export const Header = () => {
   const { pathname } = useLocation();
 
   return (
-    <header className="bg-white flex h-[56px] items-center justify-between px-4 py-1 w-full max-w-[430px] mx-auto">
+    <header className="bg-white flex h-[56px] items-center justify-between py-1 w-full blog-container sticky top-0 z-10">
       <Link
         to="/"
         className="font-bold text-2xl text-black font-ubuntu cursor-pointer no-underline"

@@ -18,10 +18,10 @@ export const Card = ({ title, body, thumbnail, date, tags }: CardProps) => {
       : '';
 
   return (
-    <div className="bg-white border-b border-[#F2F2F2] border-l-0 border-r-0 border-t-0 border-solid h-[219px] overflow-hidden flex flex-col py-[33px]">
+    <div className="bg-white border-b border-[#F2F2F2] border-l-0 border-r-0 border-t-0 border-solid min-h-[219px] flex flex-col py-[33px]">
       {/* Tags */}
       {tagsString && (
-        <p className="text-[13px] text-[#222] font-ubuntu font-normal leading-normal w-[293px] whitespace-pre-wrap ">
+        <p className="text-[13px] text-[#222] font-ubuntu font-normal leading-normal w-full whitespace-pre-wrap ">
           {tagsString}
         </p>
       )}
@@ -47,7 +47,7 @@ export const Card = ({ title, body, thumbnail, date, tags }: CardProps) => {
       </div>
 
       {/* Description */}
-      <p className="text-[16px] text-[#222] font-ubuntu font-normal leading-normal w-[293px] whitespace-pre-wrap line-clamp-2 mt-[23px]">
+      <p className="text-[16px] text-[#222] font-ubuntu font-normal leading-normal w-full whitespace-pre-wrap line-clamp-2 mt-[23px]">
         {cleanBody}
       </p>
 
